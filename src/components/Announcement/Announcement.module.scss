@@ -1,0 +1,15 @@
+@import "../../css/variables.scss";
+
+.announcement {
+  height: 2.5rem;
+  background-color: $announcement-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $white;
+  }
+}

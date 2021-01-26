@@ -10,8 +10,9 @@ const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.container}>
         <section className={styles.text}>
-          <h2>WLW</h2>
-          <p>Apparel, accessories & gifts made for dog lovers</p>
+          <h2>Apparel, gifts & accessories</h2>
+          <h2>made for dog lovers</h2>
+          <button>Shop Now</button>
         </section>
         <section className={styles.images}>
           <Img className={styles.model1} fluid={model1.childImageSharp.fluid} />
