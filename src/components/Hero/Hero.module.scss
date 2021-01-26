@@ -1,0 +1,41 @@
+@import "../../css/variables.scss";
+
+.hero {
+  height: 350px;
+  background-color: $hero-color;
+}
+
+.container {
+  @include section-center;
+  @include flex-row;
+}
+
+.images {
+  @include flex-row;
+}
+
+.model1 {
+  width: 134px;
+  height: 350px;
+}
+
+.model2 {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    height: 500px;
+  }
+
+  .model1 {
+    width: 191px;
+    height: 500px;
+  }
+
+  .model2 {
+    display: block;
+    width: 193px;
+    height: 500px;
+  }
+}
