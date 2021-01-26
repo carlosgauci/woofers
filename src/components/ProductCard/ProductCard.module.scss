@@ -1,0 +1,48 @@
+@import "../../css/variables.scss";
+
+.card {
+  max-width: 280px;
+  //   border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  //   border-radius: 20px;
+  overflow: hidden;
+}
+
+.image {
+  max-width: 280px;
+
+  //   height: 280px;
+  //   border: 1px solid #000;
+}
+.text {
+  padding: 0.5rem;
+  text-align: center;
+
+  p {
+    margin-bottom: 0.2rem;
+  }
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.category {
+  font-size: 0.9rem;
+  color: $grey;
+}
+
+.price {
+  color: $green;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.cart {
+  border: none;
+  background-color: $green;
+  padding: 0.5rem 1rem;
+  color: $white;
+  font-weight: 600;
+  cursor: pointer;
+}

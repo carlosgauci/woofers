@@ -22,6 +22,18 @@ body {
   font-family: $font;
 }
 
+p {
+  color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+a {
+  color: $heading-color;
+}
+
 h1 {
   font-size: 2rem;
 }
