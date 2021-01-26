@@ -1,0 +1,43 @@
+@import "../../css/variables.scss";
+
+.header {
+  height: 3rem;
+  background-color: $header-color;
+}
+
+.container {
+  @include section-center;
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: none;
+}
+
+.navIcon,
+.cart {
+  font-size: 1.5rem;
+}
+
+.navIcon {
+  margin-left: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav {
+    display: block;
+
+    ul {
+      @include flex-row;
+
+      li:not(:first-child) {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+  .navIcon {
+    display: none;
+  }
+}

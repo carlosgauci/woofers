@@ -1,0 +1,22 @@
+$white: #fff;
+$base-color: $white;
+$header-color: $white;
+
+$font: "Poppins", sans-serif;
+
+@mixin section-center {
+  width: 90vw;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1350px;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
