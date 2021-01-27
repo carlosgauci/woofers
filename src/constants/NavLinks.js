@@ -14,8 +14,8 @@ const data = [
   },
   {
     id: 3,
-    text: "Laptop Covers",
-    url: "/shop/laptop-covers",
+    text: "Laptop Sleeves",
+    url: "/shop/laptop-sleeves",
   },
   {
     id: 4,
