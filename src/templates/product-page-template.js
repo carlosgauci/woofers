@@ -1,13 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
 import SingleProduct from "../components/SingleProduct/SingleProduct"
+import RelatedProducts from "../components/RelatedProducts/RelatedProducts"
 
 const ProductPageTemplate = ({ data }) => {
-  return <SingleProduct product={data.product} />
+  return (
+    <>
+      <SingleProduct product={data.product} />
+      <RelatedProducts related={data.related.nodes} />
+    </>
+  )
 }
 
 export const query = graphql`
-  query myQuery($slug: String) {
+  query myQuery($slug: String, $category: String) {
     product: contentfulWooferProducts(slug: { eq: $slug }) {
       name
       sku
@@ -19,6 +25,24 @@ export const query = graphql`
       image {
         fluid {
           ...GatsbyContentfulFluid_withWebp
+        }
+      }
+    }
+
+    related: allContentfulWooferProducts(
+      limit: 4
+      filter: { slug: { ne: $slug }, category: { eq: $category } }
+    ) {
+      nodes {
+        name
+        sku
+        slug
+        category
+        price
+        image {
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
         }
       }
     }

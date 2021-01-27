@@ -1,15 +1,11 @@
 @import "../../css/variables.scss";
 
-.featured {
-  padding-top: 2rem;
-}
-
 .container {
   @include section-center;
-}
 
-.title {
-  text-align: center;
+  h3 {
+    text-align: center;
+  }
 }
 
 .grid {

@@ -29,6 +29,7 @@
   .container {
     display: flex;
     justify-content: center;
+
     // align-items: center;
   }
 
@@ -38,6 +39,7 @@
   }
 
   .info {
+    width: 50%;
     max-width: 500px;
     @include flex-col;
     justify-content: space-evenly;

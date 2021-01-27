@@ -46,11 +46,11 @@ const ProductInfo = ({ category }) => {
       {category === "Phone Case" && (
         <ul>
           <li>A sleek, solid case that fits your phone perfectly.</li>
+          <li>Wireless charging compatible.</li>
           <li>
             Made from a BPA free hybrid Thermoplastic Polyurethane and
             Polycarbonate material.
           </li>
-          <li>Wireless charging compatible.</li>
         </ul>
       )}
     </section>
