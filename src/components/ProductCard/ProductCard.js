@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styles from "./ProductCard.module.scss"
 import Img from "gatsby-image"
 
@@ -14,9 +15,13 @@ const ProductCard = ({
 }) => {
   return (
     <section className={styles.card}>
-      <div className={styles.image}>
-        <Img fluid={fluid} />
-      </div>
+      <Link
+        to={`/shop/${category.toLowerCase().replace(/\s+/g, "-")}s/${slug}`}
+      >
+        <div className={styles.image}>
+          <Img fluid={fluid} />
+        </div>
+      </Link>
       <div className={styles.text}>
         <p className={styles.name}>{name}</p>
         <p className={styles.category}>{category}</p>
