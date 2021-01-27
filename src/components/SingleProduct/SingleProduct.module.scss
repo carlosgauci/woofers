@@ -6,12 +6,12 @@
 }
 
 .image {
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .info {
   p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   button {
@@ -19,14 +19,27 @@
   }
 }
 
+.price {
+  color: $green;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     display: flex;
-    // justify-content: center;
+    justify-content: center;
+    // align-items: center;
   }
 
   .image {
     width: 50%;
     margin-right: 1rem;
+  }
+
+  .info {
+    max-width: 500px;
+    @include flex-col;
+    justify-content: space-evenly;
   }
 }

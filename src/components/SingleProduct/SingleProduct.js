@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./SingleProduct.module.scss"
 import Img from "gatsby-image"
+import ProductInfo from "../ProductInfo/ProductInfo"
 
 const SingleProduct = ({
   product: {
@@ -18,11 +19,14 @@ const SingleProduct = ({
         <Img fluid={fluid} />
       </div>
       <section className={styles.info}>
-        <h1>{name}</h1>
-        <p>{category}</p>
-        <p>{(price / 100).toFixed(2)}€</p>
-        <p>{description}</p>
-        <button>Add to cart</button>
+        <div>
+          <h2>{name}</h2>
+          <p>{category}</p>
+          <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
+          <p>{description}</p>
+          <button>Add to cart</button>
+        </div>
+        <ProductInfo category={category} />
       </section>
     </div>
   )
