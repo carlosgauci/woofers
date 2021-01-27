@@ -1,0 +1,32 @@
+@import "../../css/variables.scss";
+
+.container {
+  @include section-center;
+  padding: 1rem 0;
+}
+
+.image {
+  max-width: 500px;
+}
+
+.info {
+  p {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    @include btn;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    // justify-content: center;
+  }
+
+  .image {
+    width: 50%;
+    margin-right: 1rem;
+  }
+}
