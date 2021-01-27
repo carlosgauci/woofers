@@ -1,15 +1,18 @@
 import React from "react"
 import styles from "./RelatedProducts.module.scss"
 import ProductCard from "../ProductCard/ProductCard"
+import uuid from "react-uuid"
 
-const RelatedProducts = ({ related }) => {
+const RelatedProducts = ({ related, category }) => {
   return (
-    <section className={styles.container}>
-      <h3>Related Products</h3>
-      <div className={styles.grid}>
-        {related.map(product => (
-          <ProductCard product={product} />
-        ))}
+    <section className={styles.related}>
+      <div className={styles.container}>
+        <h3>More {category}s</h3>
+        <div className={styles.grid}>
+          {related.map(product => (
+            <ProductCard product={product} key={uuid()} />
+          ))}
+        </div>
       </div>
     </section>
   )

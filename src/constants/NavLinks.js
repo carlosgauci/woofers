@@ -23,7 +23,7 @@ const data = [
     url: "/shop/mugs",
   },
   {
-    id: 3,
+    id: 5,
     text: "Phone Cases",
     url: "/shop/phone-cases",
   },

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styles from "./FeaturedProducts.module.scss"
 import ProductCard from "../ProductCard/ProductCard"
+import uuid from "react-uuid"
 
 const FeaturedProducts = () => {
   const {
@@ -14,7 +15,7 @@ const FeaturedProducts = () => {
         <h2 className={styles.title}>Trending Products</h2>
         <section className={styles.grid}>
           {products.map(product => (
-            <ProductCard product={product} />
+            <ProductCard product={product} key={uuid()} />
           ))}
         </section>
       </div>
