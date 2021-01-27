@@ -3,13 +3,25 @@
 .footer {
   background-color: $footer-color;
   padding: 1rem 0;
-  color: $white;
+
+  p {
+    color: $white;
+    font-size: 0.8rem;
+  }
 }
 
 .container {
   @include section-center;
   @include flex-col;
   align-items: center;
+}
+
+.social {
+  color: $white;
+}
+
+.icon {
+  font-size: 2rem;
 }
 
 .payments {

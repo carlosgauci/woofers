@@ -13,7 +13,9 @@ const Header = () => (
         <Link to="/">Woofers</Link>
       </h1>
       <section className={styles.nav}>
-        <NavLinks />
+        <ul>
+          <NavLinks />
+        </ul>
       </section>
       <section>
         <FaShoppingCart className={styles.cart} />
