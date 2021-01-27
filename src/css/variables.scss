@@ -50,3 +50,12 @@ $heading-color: $black;
 
   justify-content: center;
 }
+
+@mixin border-top {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 42.5%;
+  width: 15%;
+  border-top: 1px solid rgba($color: $black, $alpha: 0.5);
+}

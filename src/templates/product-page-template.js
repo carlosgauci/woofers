@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import SingleProduct from "../components/SingleProduct/SingleProduct"
 import RelatedProducts from "../components/RelatedProducts/RelatedProducts"
+import Categories from "../components/Categories/Categories"
 
 const ProductPageTemplate = ({ data, pageContext }) => {
   return (
@@ -11,6 +12,7 @@ const ProductPageTemplate = ({ data, pageContext }) => {
         related={data.related.nodes}
         category={pageContext.category}
       />
+      <Categories />
     </>
   )
 }
