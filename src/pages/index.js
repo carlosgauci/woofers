@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => (
     <Hero />
     <ProductGrid title={"Featured Products"} products={data.featured.nodes} />
     <ProductGrid title={"Latest Additions"} products={data.latest.nodes} />
-    <CategorySection />
+    <CategorySection categories={data.categories.nodes} />
   </>
 )
 
@@ -47,6 +47,21 @@ export const query = graphql`
         price
         sku
         slug
+        image {
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+      }
+    }
+
+    categories: allContentfulWooferCategories(
+      sort: { fields: order, order: ASC }
+    ) {
+      nodes {
+        order
+        name
+        url
         image {
           fluid {
             ...GatsbyContentfulFluid_withWebp
