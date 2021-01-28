@@ -15,9 +15,7 @@ const ProductCard = ({
 }) => {
   return (
     <section className={styles.card}>
-      <Link
-        to={`/shop/${category.toLowerCase().replace(/\s+/g, "-")}s/${slug}`}
-      >
+      <Link to={`/${category.toLowerCase().replace(/\s+/g, "-")}s/${slug}`}>
         <div className={styles.image}>
           <Img fluid={fluid} />
         </div>

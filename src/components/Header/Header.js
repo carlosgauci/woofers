@@ -13,9 +13,7 @@ const Header = () => (
         <Link to="/">Woofers</Link>
       </h1>
       <section className={styles.nav}>
-        <ul>
-          <NavLinks />
-        </ul>
+        <NavLinks />
       </section>
       <section>
         <FaShoppingCart className={styles.cart} />

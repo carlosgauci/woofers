@@ -5,27 +5,27 @@ const data = [
   {
     id: 1,
     text: "T-shirts",
-    url: "/shop/t-shirts",
+    url: "/t-shirts",
   },
   {
     id: 2,
     text: "Bags",
-    url: "/shop/bags",
+    url: "/tote-bags",
   },
   {
     id: 3,
     text: "Laptop Covers",
-    url: "/shop/laptop-covers",
+    url: "/laptop-covers",
   },
   {
     id: 4,
     text: "Mugs",
-    url: "/shop/mugs",
+    url: "/coffee-mugs",
   },
   {
     id: 5,
     text: "Phone Cases",
-    url: "/shop/phone-cases",
+    url: "/phone-cases",
   },
 ]
 

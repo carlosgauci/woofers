@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Hero from "../components/Hero/Hero"
 import ProductGrid from "../components/ProductGrid/ProductGrid"
@@ -33,7 +34,7 @@ export const query = graphql`
 
     featured: allContentfulWooferProducts(
       filter: { featured: { eq: true } }
-      limit: 8
+      limit: 4
     ) {
       nodes {
         name
