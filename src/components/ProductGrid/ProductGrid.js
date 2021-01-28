@@ -7,7 +7,7 @@ const ProductGrid = ({ products, title }) => {
   return (
     <section className={styles.featured}>
       <div className={styles.container}>
-        <h3 className={styles.title}>{title}</h3>
+        {title && <h3 className={styles.title}>{title}</h3>}
         <section className={styles.grid}>
           {products.map(product => (
             <ProductCard product={product} key={uuid()} />

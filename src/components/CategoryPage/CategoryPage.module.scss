@@ -1,0 +1,9 @@
+@import "../../css/variables.scss";
+
+.container {
+  @include section-center;
+}
+
+.title {
+  text-align: center;
+}
