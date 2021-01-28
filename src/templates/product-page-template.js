@@ -12,7 +12,7 @@ const ProductPageTemplate = ({ data, pageContext }) => {
         related={data.related.nodes}
         category={pageContext.category}
       />
-      <CategorySection />
+      <CategorySection categories={data.categories.nodes} />
     </>
   )
 }
@@ -46,6 +46,21 @@ export const query = graphql`
         category
         subCategory
         price
+        image {
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+      }
+    }
+
+    categories: allContentfulWooferCategories(
+      sort: { fields: order, order: ASC }
+    ) {
+      nodes {
+        order
+        name
+        url
         image {
           fluid {
             ...GatsbyContentfulFluid_withWebp

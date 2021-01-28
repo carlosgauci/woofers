@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import CategoryPage from "../components/CategoryPage/CategoryPage"
+import CategorySection from "../components/CategorySection/CategorySection"
 
 const CategoryPageTemplate = ({ pageContext, data }) => {
   return (
@@ -9,6 +10,7 @@ const CategoryPageTemplate = ({ pageContext, data }) => {
         category={pageContext.category}
         products={data.categoryProducts.nodes}
       />
+      <CategorySection categories={data.categories.nodes} />
     </>
   )
 }
@@ -25,6 +27,21 @@ export const query = graphql`
         category
         subCategory
         price
+        image {
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+      }
+    }
+
+    categories: allContentfulWooferCategories(
+      sort: { fields: order, order: ASC }
+    ) {
+      nodes {
+        order
+        name
+        url
         image {
           fluid {
             ...GatsbyContentfulFluid_withWebp
