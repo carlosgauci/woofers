@@ -1,14 +1,17 @@
 // Colors
 $white: #fff;
-$green: #00b75b;
+$green: #56a96a;
+// $green: #00b75b;
 $black: rgb(37, 37, 37);
 $grey: #575757;
+$primary: #a95695;
 
 // Section colors
 $base-color: $white;
 $header-color: $white;
-$announcement-color: $green;
-$hero-color: #f3eeee;
+$announcement-color: $primary;
+$hero-color: #eef1f3;
+// $hero-color: #eef1f3;
 $footer-color: $black;
 
 // Text
@@ -36,7 +39,7 @@ $heading-color: $black;
 
 @mixin btn {
   border: none;
-  background-color: $green;
+  background-color: $primary;
   padding: 0.5rem 1rem;
   color: $white;
   cursor: pointer;

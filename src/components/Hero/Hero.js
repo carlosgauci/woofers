@@ -27,14 +27,14 @@ const query = graphql`
   {
     model1: file(relativePath: { eq: "model1.png" }) {
       childImageSharp {
-        fluid {
+        fluid(quality: 90) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     model2: file(relativePath: { eq: "model2.png" }) {
       childImageSharp {
-        fluid {
+        fluid(quality: 90) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

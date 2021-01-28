@@ -1,4 +1,3 @@
-const fetch = require("cross-fetch")
 const axios = require("axios")
 require("dotenv").config()
 

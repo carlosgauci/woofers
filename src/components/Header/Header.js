@@ -15,7 +15,7 @@ const Header = () => (
       <section className={styles.nav}>
         <NavLinks />
       </section>
-      <section>
+      <section className={styles.icons}>
         <FaShoppingCart className={styles.cart} />
         <RiMenuFill className={styles.navIcon} />
       </section>
