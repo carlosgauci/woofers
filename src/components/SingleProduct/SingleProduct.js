@@ -18,8 +18,8 @@ const SingleProduct = ({
       <div className={styles.image}>
         <Img fluid={fluid} />
       </div>
-      <section className={styles.info}>
-        <div>
+      <section className={styles.infoSection}>
+        <div className={styles.info}>
           <h2>{name}</h2>
           <p>{category}</p>
           <p className={styles.price}>{(price / 100).toFixed(2)}€</p>

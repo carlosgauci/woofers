@@ -5,7 +5,7 @@ const ProductInfo = ({ category }) => {
   return (
     <section className={styles.info}>
       <h4>Additional Info:</h4>
-      {category === "Laptop Sleeve" && (
+      {category === "Laptop Cover" && (
         <ul>
           <li>
             Made from 100% neoprene which is a durable, water resistant and

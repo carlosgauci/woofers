@@ -1,18 +1,18 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import styles from "./FeaturedProducts.module.scss"
-import ProductCard from "../ProductCard/ProductCard"
+import styles from "./LatestProducts.module.scss"
 import uuid from "react-uuid"
+import ProductCard from "../ProductCard/ProductCard"
 
-const FeaturedProducts = () => {
+const LatestProducts = () => {
   const {
     allContentfulWooferProducts: { nodes: products },
   } = useStaticQuery(query)
 
   return (
-    <section className={styles.featured}>
+    <section className={styles.latest}>
       <div className={styles.container}>
-        <h3 className={styles.title}>Featured Products</h3>
+        <h3 className={styles.title}>Latest Additions</h3>
         <section className={styles.grid}>
           {products.map(product => (
             <ProductCard product={product} key={uuid()} />
@@ -25,7 +25,10 @@ const FeaturedProducts = () => {
 
 const query = graphql`
   {
-    allContentfulWooferProducts(filter: { featured: { eq: true } }, limit: 8) {
+    allContentfulWooferProducts(
+      sort: { fields: createdAt, order: DESC }
+      limit: 4
+    ) {
       nodes {
         name
         category
@@ -42,4 +45,4 @@ const query = graphql`
   }
 `
 
-export default FeaturedProducts
+export default LatestProducts

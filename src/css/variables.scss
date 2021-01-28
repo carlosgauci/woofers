@@ -45,6 +45,7 @@ $heading-color: $black;
 @mixin grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 18rem));
+  grid-template-rows: auto auto;
   column-gap: 4rem;
   row-gap: 2rem;
 
