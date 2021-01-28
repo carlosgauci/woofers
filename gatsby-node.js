@@ -10,13 +10,20 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
         }
       }
+
+      categories: allContentfulWooferCategories {
+        nodes {
+          url
+          name
+        }
+      }
     }
   `)
 
   // Create individual product pages
   result.data.products.nodes.forEach(product => {
     createPage({
-      path: `/${product.category.toLowerCase().replace(/\s+/g, "-")}s/${
+      path: `/${product.category.toLowerCase().replace(/\s+/g, "-")}/${
         product.slug
       }`,
       component: path.resolve(`src/templates/product-page-template.js`),
@@ -27,23 +34,13 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create an array of unique categories
-  function dedupeCategories(products) {
-    const uniqueCategories = new Set()
-    products.forEach(product => {
-      uniqueCategories.add(product.category)
-    })
-    return Array.from(uniqueCategories)
-  }
-  const dedupedCategories = dedupeCategories(result.data.products.nodes)
-
   // Create category pages
-  dedupedCategories.forEach(category => {
+  result.data.categories.nodes.forEach(category => {
     createPage({
-      path: `/${category.toLowerCase().replace(/\s+/g, "-")}s`,
+      path: category.url,
       component: path.resolve(`src/templates/category-page-template.js`),
       context: {
-        category: category,
+        category: category.name,
       },
     })
   })

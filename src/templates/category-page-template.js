@@ -23,6 +23,7 @@ export const query = graphql`
         sku
         slug
         category
+        subCategory
         price
         image {
           fluid {

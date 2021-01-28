@@ -1,11 +1,11 @@
 import React from "react"
 import styles from "./ProductInfo.module.scss"
 
-const ProductInfo = ({ category }) => {
+const ProductInfo = ({ category, subCategory }) => {
   return (
     <section className={styles.info}>
       <h4>Additional Info:</h4>
-      {category === "Laptop Cover" && (
+      {category === "Laptop Covers" && (
         <ul>
           <li>
             Made from 100% neoprene which is a durable, water resistant and
@@ -19,7 +19,7 @@ const ProductInfo = ({ category }) => {
           <li>Available in 2 sizes: 13'' x 13'' & 15'' x 15''.</li>
         </ul>
       )}
-      {category === "Tote Bag" && (
+      {category === "Bags" && subCategory === "Tote Bags" && (
         <ul>
           <li>Made from 100% spun polyester fabric.</li>
           <li>Printed on both sides.</li>
@@ -27,7 +27,7 @@ const ProductInfo = ({ category }) => {
           <li>Durable, can carry up to 20kg in weight.</li>
         </ul>
       )}
-      {category === "Coffee Mug" && (
+      {category === "Coffee Mugs" && (
         <ul>
           <li>Ceramic 11oz mug.</li>
           <li>Printed on both sides.</li>
@@ -37,13 +37,13 @@ const ProductInfo = ({ category }) => {
           <li>Dishwasher and microwave safe.</li>
         </ul>
       )}
-      {category === "Crop Top" && (
+      {category === "T-shirts" && subCategory === "Crop Tops" && (
         <ul>
           <li>Made from 100% organic cotton.</li>
           <li>Relaxed fit.</li>
         </ul>
       )}
-      {category === "Phone Case" && (
+      {category === "Phone Cases" && (
         <ul>
           <li>A sleek, solid case that fits your phone perfectly.</li>
           <li>Wireless charging compatible.</li>

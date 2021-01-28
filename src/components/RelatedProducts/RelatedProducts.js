@@ -7,7 +7,7 @@ const RelatedProducts = ({ related, category }) => {
   return (
     <section className={styles.related}>
       <div className={styles.container}>
-        <h3>More {category}s</h3>
+        <h3>More {category}</h3>
         <div className={styles.grid}>
           {related.map(product => (
             <ProductCard product={product} key={uuid()} />

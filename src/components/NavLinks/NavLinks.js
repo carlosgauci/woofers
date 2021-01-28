@@ -7,6 +7,7 @@ const query = graphql`
       nodes {
         order
         name
+        navLabel
         url
         image {
           fluid {
@@ -26,7 +27,7 @@ const NavLinks = () => {
   const links = data.map(link => {
     return (
       <li key={link.order}>
-        <Link to={link.url}>{link.name}</Link>
+        <Link to={link.url}>{link.navLabel ? link.navLabel : link.name}</Link>
       </li>
     )
   })

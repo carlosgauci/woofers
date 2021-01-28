@@ -23,6 +23,7 @@ export const query = graphql`
       nodes {
         name
         category
+        subCategory
         price
         sku
         slug
@@ -42,6 +43,7 @@ export const query = graphql`
       nodes {
         name
         category
+        subCategory
         price
         sku
         slug
