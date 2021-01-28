@@ -3,19 +3,21 @@ import { graphql } from "gatsby"
 
 import Hero from "../components/Hero/Hero"
 import ProductGrid from "../components/ProductGrid/ProductGrid"
+import CategorySection from "../components/CategorySection/CategorySection"
 
 const IndexPage = ({ data }) => (
   <>
     <Hero />
     <ProductGrid title={"Featured Products"} products={data.featured.nodes} />
     <ProductGrid title={"Latest Additions"} products={data.latest.nodes} />
+    <CategorySection />
   </>
 )
 
 export const query = graphql`
   {
-    latest: allContentfulWooferProducts(
-      sort: { fields: createdAt, order: DESC }
+    featured: allContentfulWooferProducts(
+      filter: { featured: { eq: true } }
       limit: 4
     ) {
       nodes {
@@ -32,8 +34,9 @@ export const query = graphql`
       }
     }
 
-    featured: allContentfulWooferProducts(
-      filter: { featured: { eq: true } }
+    latest: allContentfulWooferProducts(
+      filter: { featured: { eq: false } }
+      sort: { fields: createdAt, order: DESC }
       limit: 4
     ) {
       nodes {

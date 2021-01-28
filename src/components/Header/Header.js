@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import NavLinks from "../../constants/NavLinks"
+import NavLinks from "../NavLinks/NavLinks"
 import { RiMenuFill } from "react-icons/ri"
 import { FaShoppingCart } from "react-icons/fa"
 

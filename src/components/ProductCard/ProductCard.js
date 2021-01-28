@@ -13,16 +13,22 @@ const ProductCard = ({
     image: { fluid },
   },
 }) => {
+  const productLink = `/${category.toLowerCase().replace(/\s+/g, "-")}s/${slug}`
+  const categoryLink = `/${category.toLowerCase().replace(/\s+/g, "-")}s`
+
   return (
     <section className={styles.card}>
-      <Link to={`/${category.toLowerCase().replace(/\s+/g, "-")}s/${slug}`}>
+      <Link to={productLink}>
         <div className={styles.image}>
           <Img fluid={fluid} />
         </div>
       </Link>
       <div className={styles.text}>
-        <p className={styles.name}>{name}</p>
-        <p className={styles.category}>{category}</p>
+        <Link to={productLink}>
+          <p className={styles.name}>{name}</p>
+          <p className={styles.category}>{category}</p>
+        </Link>
+
         <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
         <button className={styles.cart}>add to cart</button>
       </div>

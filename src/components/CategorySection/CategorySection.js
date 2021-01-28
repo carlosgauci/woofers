@@ -1,14 +1,14 @@
 import React from "react"
-import styles from "./Categories.module.scss"
+import styles from "./CategorySection.module.scss"
 
-const Categories = () => {
+const CategorySection = () => {
   return (
     <section className={styles.categories}>
       <div className={styles.container}>
-        <h4>Shop By Category</h4>
+        <h3>Shop By Category</h3>
       </div>
     </section>
   )
 }
 
-export default Categories
+export default CategorySection
