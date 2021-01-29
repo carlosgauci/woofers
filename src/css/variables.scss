@@ -1,4 +1,5 @@
 // Colors
+// $white: #fff;
 $white: #fff;
 $green: #56a96a;
 $black: rgb(37, 37, 37);
@@ -11,6 +12,9 @@ $header-color: $white;
 $announcement-color: $primary;
 $hero-color: #eef1f3;
 $footer-color: $black;
+
+// Header height
+$header-height: 3.5rem;
 
 // Text
 $font: "Poppins", sans-serif;

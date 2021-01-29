@@ -33,6 +33,11 @@ export const query = graphql`
           ...GatsbyContentfulFluid_withWebp
         }
       }
+      cartImage: image {
+        fixed(width: 125, height: 125, quality: 90) {
+          ...GatsbyContentfulFixed_withWebp
+        }
+      }
     }
 
     related: allContentfulWooferProducts(
@@ -49,6 +54,11 @@ export const query = graphql`
         image {
           fluid {
             ...GatsbyContentfulFluid_withWebp
+          }
+        }
+        cartImage: image {
+          fixed(width: 125, height: 125, quality: 90) {
+            ...GatsbyContentfulFixed_withWebp
           }
         }
       }

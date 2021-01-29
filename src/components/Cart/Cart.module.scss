@@ -9,8 +9,20 @@
   text-align: center;
 }
 
-.cartList {
-  display: block;
-  max-width: 400px;
+.cartContainer {
+  @include flex-col;
+  max-width: 500px;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+}
+
+.checkoutBox {
+  margin: 2rem 0;
+
+  button {
+    @include btn;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
 }

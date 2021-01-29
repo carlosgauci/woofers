@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import Img from "gatsby-image"
 import styles from "./Cart.module.scss"
 import { CartContext } from "../../context/CartContext"
 import CartItem from "../CartItem/CartItem"
@@ -12,16 +11,17 @@ const Cart = () => {
       {cart.length === 0 ? (
         <p>Your shopping cart is empty!</p>
       ) : (
-        <>
-          <section className={styles.cartList}>
+        <div className={styles.cartContainer}>
+          <section>
             {cart.map(item => {
               return <CartItem item={item} />
             })}
           </section>
           <section className={styles.checkoutBox}>
-            <h3>Total Price: sgsd</h3>
+            <h3>Total:</h3>
+            <button>Checkout</button>
           </section>
-        </>
+        </div>
       )}
     </div>
   )

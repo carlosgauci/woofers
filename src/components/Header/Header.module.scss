@@ -1,12 +1,13 @@
 @import "../../css/variables.scss";
 
 .header {
-  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
   background-color: $header-color;
-
-  h1 {
-    font-weight: 400;
-  }
+  z-index: 99;
 }
 
 .container {
@@ -16,8 +17,26 @@
   align-items: center;
 }
 
+.title {
+  @include flex-row;
+  align-items: center;
+
+  h1 {
+    font-weight: 400;
+  }
+  svg {
+    height: 2rem;
+    margin-left: 0.3rem;
+    fill: $black;
+  }
+}
 .nav {
   display: none;
+}
+
+.icons {
+  @include flex-row;
+  align-items: center;
 }
 
 .navIcon,
@@ -29,6 +48,21 @@
   margin-left: 0.5rem;
 }
 
+.cartAmount {
+  margin-left: 0.1rem;
+  min-width: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.cartContainer {
+  @include flex-row;
+  align-items: center;
+}
+
+.total {
+  margin-left: 0.25rem;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     display: grid;
@@ -37,7 +71,7 @@
   }
 
   .icons {
-    text-align: right;
+    justify-content: flex-end;
   }
   .nav {
     display: block;

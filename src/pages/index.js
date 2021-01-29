@@ -33,8 +33,8 @@ export const query = graphql`
           }
         }
         cartImage: image {
-          fixed(width: 150, height: 150) {
-            src
+          fixed(width: 125, height: 125, quality: 90) {
+            ...GatsbyContentfulFixed_withWebp
           }
         }
       }
@@ -58,8 +58,8 @@ export const query = graphql`
           }
         }
         cartImage: image {
-          fixed(width: 150, height: 150) {
-            src
+          fixed(width: 125, height: 125, quality: 90) {
+            ...GatsbyContentfulFixed_withWebp
           }
         }
       }
