@@ -14,18 +14,3 @@
   max-width: 400px;
   margin: 0 auto;
 }
-
-.item {
-  @include flex-row;
-  width: 100%;
-  align-items: center;
-}
-
-.image {
-  margin-right: 0.5rem;
-}
-
-.price {
-  color: $green;
-  font-weight: 600;
-}
