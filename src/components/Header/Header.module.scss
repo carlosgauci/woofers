@@ -3,6 +3,10 @@
 .header {
   height: 4rem;
   background-color: $header-color;
+
+  h1 {
+    font-weight: 400;
+  }
 }
 
 .container {
