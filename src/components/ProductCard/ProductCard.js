@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import styles from "./ProductCard.module.scss"
 import Img from "gatsby-image"
 import toSingular from "../../utils/toSingular"
+import formatPrice from "../../utils/formatPrice"
+
+import { CartContext } from "../../context/CartContext"
 
 const ProductCard = ({
   product: {
@@ -12,10 +15,28 @@ const ProductCard = ({
     price,
     sku,
     slug,
+    // image: { fluid },
     image: { fluid },
+    cartImage: { fixed },
   },
 }) => {
   const productLink = `/${category.toLowerCase().replace(/\s+/g, "-")}/${slug}`
+
+  const [cart, setCart] = useContext(CartContext)
+
+  const item = {
+    name: name,
+    id: sku,
+    price: price,
+    category: subCategory || category,
+    amount: 1,
+    image: fixed,
+  }
+
+  const additem = item => {
+    setCart(cart => [...cart, item])
+    console.log(cart)
+  }
 
   return (
     <section className={styles.card}>
@@ -31,8 +52,10 @@ const ProductCard = ({
             {toSingular(subCategory ? subCategory : category)}
           </p>
         </Link>
-        <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
-        <button className={styles.cart}>add to cart</button>
+        <p className={styles.price}>{formatPrice(price)}</p>
+        <button className={styles.cart} onClick={() => additem(item)}>
+          add to cart
+        </button>
       </div>
     </section>
   )

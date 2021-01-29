@@ -32,6 +32,11 @@ export const query = graphql`
             ...GatsbyContentfulFluid_withWebp
           }
         }
+        cartImage: image {
+          fixed(width: 150, height: 150) {
+            src
+          }
+        }
       }
     }
 
@@ -50,6 +55,11 @@ export const query = graphql`
         image {
           fluid {
             ...GatsbyContentfulFluid_withWebp
+          }
+        }
+        cartImage: image {
+          fixed(width: 150, height: 150) {
+            src
           }
         }
       }

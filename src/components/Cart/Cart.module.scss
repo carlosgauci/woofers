@@ -3,3 +3,29 @@
 .container {
   @include section-center;
 }
+
+.title {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.cartList {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.item {
+  @include flex-row;
+  width: 100%;
+  align-items: center;
+}
+
+.image {
+  margin-right: 0.5rem;
+}
+
+.price {
+  color: $green;
+  font-weight: 600;
+}
