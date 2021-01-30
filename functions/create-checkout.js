@@ -40,7 +40,7 @@ const addShipping = products => {
   const newProducts = products
   newProducts.push({
     name: "Shipping",
-    price: 950,
+    price: 400 + newProducts.length * 200,
     quantity: 1,
   })
   return newProducts
