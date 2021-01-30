@@ -15,14 +15,13 @@ const ProductCard = ({
     price,
     sku,
     slug,
-    // image: { fluid },
     image: { fluid },
     cartImage: { fixed },
   },
 }) => {
   const productLink = `/${category.toLowerCase().replace(/\s+/g, "-")}/${slug}`
 
-  const [cart, setCart, addItem] = useContext(CartContext)
+  const { dispatch } = useContext(CartContext)
 
   const item = {
     name: name,
@@ -32,10 +31,6 @@ const ProductCard = ({
     amount: 1,
     image: fixed,
   }
-
-  // const addItem = item => {
-  //   setCart(cart => [...cart, item])
-  // }
 
   return (
     <section className={styles.card}>
@@ -52,7 +47,10 @@ const ProductCard = ({
           </p>
         </Link>
         <p className={styles.price}>{formatPrice(price)}</p>
-        <button className={styles.cart} onClick={() => addItem(item)}>
+        <button
+          className={styles.cart}
+          onClick={() => dispatch({ type: "ADD_ITEM", item })}
+        >
           add to cart
         </button>
       </div>

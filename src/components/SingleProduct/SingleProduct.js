@@ -27,7 +27,7 @@ const SingleProduct = ({
     image: fixed,
   }
 
-  const [cart, setCart, addItem] = useContext(CartContext)
+  const { dispatch } = useContext(CartContext)
 
   return (
     <div className={styles.container}>
@@ -40,7 +40,9 @@ const SingleProduct = ({
           <p>{toSingular(subCategory || category)}</p>
           <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
           <p>{description}</p>
-          <button onClick={() => addItem(item)}>Add to cart</button>
+          <button onClick={() => dispatch({ type: "ADD_ITEM", item })}>
+            Add to cart
+          </button>
         </div>
         <ProductInfo category={category} subCategory={subCategory} />
       </section>

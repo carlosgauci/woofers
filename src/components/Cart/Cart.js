@@ -1,15 +1,21 @@
 import React, { useContext } from "react"
+import { Link } from "gatsby"
 import styles from "./Cart.module.scss"
 import { CartContext } from "../../context/CartContext"
 import CartItem from "../CartItem/CartItem"
 
 const Cart = () => {
-  const [cart, setCart] = useContext(CartContext)
+  const { cart, setCart } = useContext(CartContext)
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Your Shopping Cart</h2>
       {cart.length === 0 ? (
-        <p>Your shopping cart is empty!</p>
+        <section className={styles.error}>
+          <p>Your shopping cart is empty!</p>
+          <Link to="/">
+            <button>Back to store</button>
+          </Link>
+        </section>
       ) : (
         <div className={styles.cartContainer}>
           <section>
