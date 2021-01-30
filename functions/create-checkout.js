@@ -16,7 +16,7 @@ async function getSelectedProducts(items) {
   items.forEach(item => {
     const found = inventory.find(p => p.sku === item.sku)
     if (found) {
-      selected.push(found)
+      selected.push({ ...found, quantity: item.quantity })
     }
   })
 
@@ -24,13 +24,13 @@ async function getSelectedProducts(items) {
 }
 
 const getLineItems = products => {
-  return products.map(obj => ({
-    name: obj.name,
-    description: obj.description,
-    images: [obj.image.url],
-    amount: obj.price,
+  return products.map(product => ({
+    name: product.name,
+    description: product.description,
+    images: [product.image.url],
+    amount: product.price,
     currency: "EUR",
-    quantity: 1,
+    quantity: product.quantity,
   }))
 }
 
