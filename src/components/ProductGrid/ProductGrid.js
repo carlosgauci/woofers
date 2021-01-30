@@ -10,7 +10,7 @@ const ProductGrid = ({ products, title, border }) => {
         {title && <h3 className={styles.title}>{title}</h3>}
         <section className={styles.grid}>
           {products.map(product => (
-            <ProductCard product={product} key={uuid()} />
+            <ProductCard product={product} key={product.sku} />
           ))}
         </section>
       </div>

@@ -6,8 +6,31 @@ import formatPrice from "../../utils/formatPrice"
 
 import { CartContext } from "../../context/CartContext"
 
+import getStripe from "../../utils/stripe"
+
 const Cart = () => {
   const { cart, cartTotal } = useContext(CartContext)
+
+  const checkOut = () => {
+    const payload = {
+      skus: cart,
+    }
+    performPurchase(payload)
+  }
+
+  const performPurchase = async payload => {
+    const response = await axios.post("/api/create-checkout", payload)
+    console.log("response", response)
+    const stripe = await getStripe(response.data.publishableKey)
+
+    const { error } = await stripe.redirectToCheckout({
+      sessionId: response.data.sessionId,
+    })
+
+    if (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -23,7 +46,7 @@ const Cart = () => {
         <div className={styles.cartContainer}>
           <section className={styles.cartItems}>
             {cart.map(item => {
-              return <CartItem key={item.id} item={item} />
+              return <CartItem key={item.sku} item={item} />
             })}
           </section>
           <section className={styles.checkoutBox}>
@@ -31,7 +54,7 @@ const Cart = () => {
               Total:{" "}
               <span className={styles.price}>{formatPrice(cartTotal)}</span>{" "}
             </h3>
-            <button>Checkout</button>
+            <button onClick={() => checkOut()}>Checkout</button>
           </section>
         </div>
       )}

@@ -25,11 +25,11 @@ const ProductCard = ({
 
   const item = {
     name: name,
-    id: sku,
+    sku: sku,
     price: price,
     category: category,
     subCategory: subCategory || null,
-    amount: 1,
+    quantity: 1,
     image: fixed,
     slug: slug,
   }

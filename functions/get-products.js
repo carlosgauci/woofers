@@ -5,7 +5,7 @@ const GET_PRODUCTS = `
         wooferProductsCollection {
             items {
                 name
-                id:sku
+                sku
                 category
                 price
                 image {

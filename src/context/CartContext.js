@@ -12,7 +12,7 @@ export const CartProvider = props => {
   )
 
   const cartTotal = cart.reduce(
-    (total, item) => total + item.price * item.amount,
+    (total, item) => total + item.price * item.quantity,
     0
   )
 
