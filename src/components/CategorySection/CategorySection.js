@@ -11,12 +11,12 @@ const CategorySection = ({ categories }) => {
         <div className={styles.grid}>
           {categories.map(category => {
             return (
-              <Link to={category.url}>
-                <section className={styles.categoryCard}>
+              <section key={category.order} className={styles.categoryCard}>
+                <Link to={category.url}>
                   <Img fluid={category.image.fluid} />
                   <h4 className={styles.name}>{category.name}</h4>
-                </section>
-              </Link>
+                </Link>
+              </section>
             )
           })}
         </div>

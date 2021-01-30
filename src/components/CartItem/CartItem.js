@@ -15,7 +15,7 @@ const CartItem = ({ item }) => {
   }`
 
   return (
-    <section className={styles.item} key={item.id}>
+    <section className={styles.item}>
       <Link to={productLink}>
         <Img fixed={item.image} />
       </Link>

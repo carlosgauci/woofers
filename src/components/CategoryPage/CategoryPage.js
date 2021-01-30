@@ -6,7 +6,6 @@ const CategoryPage = ({ category, products }) => {
   return (
     <section className={styles.category}>
       <div className={styles.container}>
-        {/* <h2 className={styles.title}>{category}s</h2> */}
         <ProductGrid products={products} title={`${category}`} />
       </div>
     </section>

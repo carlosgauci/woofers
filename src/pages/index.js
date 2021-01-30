@@ -9,7 +9,6 @@ const IndexPage = ({ data }) => (
   <>
     <Hero />
     <ProductGrid title={"Featured Products"} products={data.featured.nodes} />
-    {console.log(localStorage)}
     <ProductGrid
       title={"Latest Additions"}
       products={data.latest.nodes}

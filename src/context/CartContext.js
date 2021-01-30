@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useReducer } from "react"
+import React, { useEffect, useReducer } from "react"
 import { cartReducer } from "./CartReducer"
 
 export const CartContext = React.createContext()
 
 export const CartProvider = props => {
   const localData = localStorage.getItem("cart")
-  // const [cart, setCart] = useState(localData ? JSON.parse(localData) : [])
 
   const [cart, dispatch] = useReducer(
     cartReducer,

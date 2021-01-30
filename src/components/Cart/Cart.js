@@ -23,7 +23,7 @@ const Cart = () => {
         <div className={styles.cartContainer}>
           <section className={styles.cartItems}>
             {cart.map(item => {
-              return <CartItem item={item} />
+              return <CartItem key={item.id} item={item} />
             })}
           </section>
           <section className={styles.checkoutBox}>
