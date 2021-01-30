@@ -7,6 +7,7 @@ import formatPrice from "../../utils/formatPrice"
 import { CartContext } from "../../context/CartContext"
 
 import getStripe from "../../utils/stripe"
+import axios from "axios"
 
 const Cart = () => {
   const { cart, cartTotal } = useContext(CartContext)

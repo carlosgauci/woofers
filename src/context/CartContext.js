@@ -4,7 +4,7 @@ import { cartReducer } from "./CartReducer"
 export const CartContext = React.createContext()
 
 export const CartProvider = props => {
-  const localData = localStorage.getItem("cart")
+  const localData = localStorage ? localStorage.getItem("cart") : undefined
 
   const [cart, dispatch] = useReducer(
     cartReducer,
