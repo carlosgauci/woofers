@@ -9,7 +9,12 @@ const IndexPage = ({ data }) => (
   <>
     <Hero />
     <ProductGrid title={"Featured Products"} products={data.featured.nodes} />
-    <ProductGrid title={"Latest Additions"} products={data.latest.nodes} />
+    {console.log(localStorage)}
+    <ProductGrid
+      title={"Latest Additions"}
+      products={data.latest.nodes}
+      border={true}
+    />
     <CategorySection categories={data.categories.nodes} />
   </>
 )

@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
 import styles from "./SingleProduct.module.scss"
 import Img from "gatsby-image"
 import ProductInfo from "../ProductInfo/ProductInfo"
 import toSingular from "../../utils/toSingular"
+
+import { CartContext } from "../../context/CartContext"
 
 const SingleProduct = ({
   product: {
@@ -13,8 +15,20 @@ const SingleProduct = ({
     price,
     description: { description },
     image: { fluid },
+    cartImage: { fixed },
   },
 }) => {
+  const item = {
+    name: name,
+    id: sku,
+    price: price,
+    category: subCategory || category,
+    amount: 1,
+    image: fixed,
+  }
+
+  const [cart, setCart, addItem] = useContext(CartContext)
+
   return (
     <div className={styles.container}>
       <div className={styles.image}>
@@ -23,10 +37,10 @@ const SingleProduct = ({
       <section className={styles.infoSection}>
         <div className={styles.info}>
           <h2>{name}</h2>
-          <p>{toSingular(subCategory ? subCategory : category)}</p>
+          <p>{toSingular(subCategory || category)}</p>
           <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
           <p>{description}</p>
-          <button>Add to cart</button>
+          <button onClick={() => addItem(item)}>Add to cart</button>
         </div>
         <ProductInfo category={category} subCategory={subCategory} />
       </section>

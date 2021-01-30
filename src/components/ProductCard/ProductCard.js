@@ -22,7 +22,7 @@ const ProductCard = ({
 }) => {
   const productLink = `/${category.toLowerCase().replace(/\s+/g, "-")}/${slug}`
 
-  const [cart, setCart] = useContext(CartContext)
+  const [cart, setCart, addItem] = useContext(CartContext)
 
   const item = {
     name: name,
@@ -33,10 +33,9 @@ const ProductCard = ({
     image: fixed,
   }
 
-  const additem = item => {
-    setCart(cart => [...cart, item])
-    console.log(cart)
-  }
+  // const addItem = item => {
+  //   setCart(cart => [...cart, item])
+  // }
 
   return (
     <section className={styles.card}>
@@ -49,11 +48,11 @@ const ProductCard = ({
         <Link to={productLink}>
           <p className={styles.name}>{name}</p>
           <p className={styles.category}>
-            {toSingular(subCategory ? subCategory : category)}
+            {toSingular(subCategory || category)}
           </p>
         </Link>
         <p className={styles.price}>{formatPrice(price)}</p>
-        <button className={styles.cart} onClick={() => additem(item)}>
+        <button className={styles.cart} onClick={() => addItem(item)}>
           add to cart
         </button>
       </div>
