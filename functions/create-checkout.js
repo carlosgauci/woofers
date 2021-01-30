@@ -10,7 +10,7 @@ async function getData(url) {
 
 async function getSelectedProducts(items) {
   const inventory = await getData(
-    "https://gracious-jackson-d0bc51.netlify.app/api/get-products"
+    "https://elated-nobel-9eb8d0.netlify.app/api/get-products"
   )
   let selected = []
   items.forEach(item => {
