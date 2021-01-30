@@ -36,6 +36,7 @@ const getLineItems = products => {
   }))
 }
 
+// Add shipping cost
 const addShipping = products => {
   const newProducts = products
   newProducts.push({
