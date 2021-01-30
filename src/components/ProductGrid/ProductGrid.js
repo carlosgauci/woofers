@@ -1,7 +1,6 @@
 import React from "react"
 import styles from "./ProductGrid.module.scss"
 import ProductCard from "../ProductCard/ProductCard"
-import uuid from "react-uuid"
 
 const ProductGrid = ({ products, title, border }) => {
   return (

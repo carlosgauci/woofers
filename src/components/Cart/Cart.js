@@ -14,7 +14,7 @@ const Cart = () => {
 
   const checkOut = () => {
     const payload = {
-      skus: cart,
+      items: cart,
     }
     performPurchase(payload)
   }

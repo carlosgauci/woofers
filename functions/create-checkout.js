@@ -1,9 +1,9 @@
 require("dotenv").config()
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
-const axios = require("axios")
+const fetch = require("cross-fetch")
 
 async function getData(url) {
-  const response = await axios(url)
+  const response = await fetch(url)
 
   return response.json()
 }
@@ -30,13 +30,13 @@ const getLineItems = products => {
     images: [obj.image.url],
     amount: obj.price,
     currency: "EUR",
-    quantity: validatedQuantity,
+    quantity: 1,
   }))
 }
 
 exports.handler = async event => {
   const { items } = JSON.parse(event.body)
-  const products = getSelectedProducts(items)
+  const products = await getSelectedProducts(items)
   const validatedQuantity = 1
   const lineItems = getLineItems(products)
 
