@@ -21,13 +21,16 @@ const Cart = () => {
         </section>
       ) : (
         <div className={styles.cartContainer}>
-          <section>
+          <section className={styles.cartItems}>
             {cart.map(item => {
               return <CartItem item={item} />
             })}
           </section>
           <section className={styles.checkoutBox}>
-            <h3>Total: {formatPrice(cartTotal)}</h3>
+            <h3>
+              Total:{" "}
+              <span className={styles.price}>{formatPrice(cartTotal)}</span>{" "}
+            </h3>
             <button>Checkout</button>
           </section>
         </div>
