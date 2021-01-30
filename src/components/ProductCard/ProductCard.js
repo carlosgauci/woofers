@@ -30,6 +30,7 @@ const ProductCard = ({
     category: subCategory || category,
     amount: 1,
     image: fixed,
+    slug: slug,
   }
 
   return (

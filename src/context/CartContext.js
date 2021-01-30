@@ -12,9 +12,10 @@ export const CartProvider = props => {
     localData ? JSON.parse(localData) : []
   )
 
-  // const addItem = item => {
-  //   setCart(cart => [...cart, item])
-  // }
+  const cartTotal = cart.reduce(
+    (total, item) => total + item.price * item.amount,
+    0
+  )
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart))
@@ -22,8 +23,7 @@ export const CartProvider = props => {
 
   const providerValue = {
     cart,
-    // setCart,
-    // addItem,
+    cartTotal,
     dispatch,
   }
 

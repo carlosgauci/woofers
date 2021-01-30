@@ -23,7 +23,8 @@
   button {
     @include btn;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    margin-top: 1rem;
   }
 }
 
@@ -33,6 +34,8 @@
 
   button {
     @include btn;
+    font-weight: 600;
+    font-size: 1.25rem;
     margin-top: 2rem;
   }
 }

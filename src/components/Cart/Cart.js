@@ -1,11 +1,14 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
 import styles from "./Cart.module.scss"
-import { CartContext } from "../../context/CartContext"
 import CartItem from "../CartItem/CartItem"
+import formatPrice from "../../utils/formatPrice"
+
+import { CartContext } from "../../context/CartContext"
 
 const Cart = () => {
-  const { cart, setCart } = useContext(CartContext)
+  const { cart, cartTotal } = useContext(CartContext)
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Your Shopping Cart</h2>
@@ -24,7 +27,7 @@ const Cart = () => {
             })}
           </section>
           <section className={styles.checkoutBox}>
-            <h3>Total:</h3>
+            <h3>Total: {formatPrice(cartTotal)}</h3>
             <button>Checkout</button>
           </section>
         </div>

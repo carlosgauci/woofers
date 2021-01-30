@@ -22,6 +22,7 @@ export const query = graphql`
     product: contentfulWooferProducts(slug: { eq: $slug }) {
       name
       sku
+      slug
       category
       subCategory
       price

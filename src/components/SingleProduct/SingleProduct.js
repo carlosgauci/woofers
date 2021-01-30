@@ -13,6 +13,7 @@ const SingleProduct = ({
     category,
     subCategory,
     price,
+    slug,
     description: { description },
     image: { fluid },
     cartImage: { fixed },
@@ -25,6 +26,7 @@ const SingleProduct = ({
     category: subCategory || category,
     amount: 1,
     image: fixed,
+    slug: slug,
   }
 
   const { dispatch } = useContext(CartContext)

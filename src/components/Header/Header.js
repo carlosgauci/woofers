@@ -10,7 +10,7 @@ import styles from "./Header.module.scss"
 import { CartContext } from "../../context/CartContext"
 
 const Header = () => {
-  const [cart] = useContext(CartContext)
+  const { cartTotal } = useContext(CartContext)
 
   return (
     <header className={styles.header}>
@@ -31,14 +31,8 @@ const Header = () => {
         <section className={styles.icons}>
           <Link to="/cart">
             <div className={styles.cartContainer}>
-              <p className={styles.total}>{formatPrice(0)}</p>
+              <p className={styles.total}>{formatPrice(cartTotal)}</p>
               <AiOutlineShoppingCart className={styles.cart} />
-              {/* <p
-                style={{ visibility: cart.length > 0 ? "visible" : "hidden" }}
-                className={styles.cartAmount}
-              >
-                {cart.length}
-              </p> */}
             </div>
           </Link>
           <RiMenuFill className={styles.navIcon} />
