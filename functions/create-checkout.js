@@ -11,7 +11,7 @@ async function getData(url) {
 // Get the actual items in the cart from the api, to prevent someone messing with prices
 async function getSelectedProducts(items) {
   const inventory = await getData(
-    "https://elated-nobel-9eb8d0.netlify.app/api/get-products"
+    "https://gallant-wilson-45079a.netlify.app/api/get-products"
   )
   let selected = []
   items.forEach(item => {

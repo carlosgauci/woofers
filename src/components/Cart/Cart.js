@@ -1,13 +1,11 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
-import styles from "./Cart.module.scss"
-import CartItem from "../CartItem/CartItem"
-import formatPrice from "../../utils/formatPrice"
-
-import { CartContext } from "../../context/CartContext"
-
-import getStripe from "../../utils/stripe"
 import axios from "axios"
+import CartItem from "../CartItem/CartItem"
+import { CartContext } from "../../context/CartContext"
+import formatPrice from "../../utils/formatPrice"
+import getStripe from "../../utils/stripe"
+import styles from "./Cart.module.scss"
 
 const Cart = () => {
   const { cart, cartTotal } = useContext(CartContext)
