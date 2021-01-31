@@ -9,7 +9,7 @@ import styles from "./Header.module.scss"
 
 import { CartContext } from "../../context/CartContext"
 
-const Header = () => {
+const Header = ({ mobileNav, setMobileNav }) => {
   const { cartTotal } = useContext(CartContext)
 
   return (
@@ -35,7 +35,11 @@ const Header = () => {
               <AiOutlineShoppingCart className={styles.cart} />
             </div>
           </Link>
-          <RiMenuFill className={styles.navIcon} />
+
+          <RiMenuFill
+            className={styles.navIcon}
+            onClick={() => setMobileNav(!mobileNav)}
+          />
         </section>
       </div>
     </header>

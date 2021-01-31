@@ -8,11 +8,16 @@ import CategorySection from "../components/CategorySection/CategorySection"
 const IndexPage = ({ data }) => (
   <>
     <Hero />
-    <ProductGrid title={"Featured Products"} products={data.featured.nodes} />
+    <ProductGrid
+      title={"Featured Products"}
+      products={data.featured.nodes}
+      index={true}
+    />
     <ProductGrid
       title={"Latest Additions"}
       products={data.latest.nodes}
       border={true}
+      index={true}
     />
     <CategorySection categories={data.categories.nodes} />
   </>
@@ -22,7 +27,7 @@ export const query = graphql`
   {
     featured: allContentfulWooferProducts(
       filter: { featured: { eq: true } }
-      limit: 4
+      limit: 6
     ) {
       nodes {
         name
@@ -47,7 +52,7 @@ export const query = graphql`
     latest: allContentfulWooferProducts(
       filter: { featured: { eq: false } }
       sort: { fields: createdAt, order: DESC }
-      limit: 4
+      limit: 6
     ) {
       nodes {
         name

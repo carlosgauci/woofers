@@ -29,3 +29,36 @@
     row-gap: 4rem;
   }
 }
+
+// control number of products in grid on index page
+
+.gridIndex {
+  section {
+    &:nth-child(5),
+    &:nth-child(6) {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .gridIndex {
+    section {
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: block;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1495px) {
+  .gridIndex {
+    section {
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: none;
+      }
+    }
+  }
+}
