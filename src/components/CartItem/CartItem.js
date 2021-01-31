@@ -21,7 +21,10 @@ const CartItem = ({ item }) => {
       </Link>
       <div className={styles.text}>
         <h4>{item.name}</h4>
-        <p className={styles.category}>{toSingular(item.category)}</p>
+        <p className={styles.category}>
+          {toSingular(item.category)}{" "}
+          {item.description && `- ${item.description}`}
+        </p>
         <div className={styles.quantity}>
           <FaMinus
             onClick={() => dispatch({ type: "REMOVE_ITEM", item })}

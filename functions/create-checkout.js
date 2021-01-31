@@ -17,7 +17,11 @@ async function getSelectedProducts(items) {
   items.forEach(item => {
     const found = inventory.find(p => p.sku === item.sku)
     if (found) {
-      selected.push({ ...found, quantity: item.quantity })
+      selected.push({
+        ...found,
+        quantity: item.quantity,
+        description: item.description || undefined,
+      })
     }
   })
 
