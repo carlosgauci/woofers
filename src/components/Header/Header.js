@@ -9,7 +9,7 @@ import styles from "./Header.module.scss"
 
 import { CartContext } from "../../context/CartContext"
 
-const Header = ({ mobileNav, setMobileNav }) => {
+const Header = ({ setMobileNav }) => {
   const { cartTotal } = useContext(CartContext)
 
   return (
@@ -38,7 +38,7 @@ const Header = ({ mobileNav, setMobileNav }) => {
 
           <RiMenuFill
             className={styles.navIcon}
-            onClick={() => setMobileNav(!mobileNav)}
+            onClick={() => setMobileNav(true)}
           />
         </section>
       </div>
