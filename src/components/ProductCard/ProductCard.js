@@ -40,6 +40,7 @@ const ProductCard = ({
     image: fixed,
     slug: slug,
     description: variant,
+    variantIdentifier: name + variant,
   }
 
   return (
@@ -78,9 +79,13 @@ const ProductCard = ({
           </select>
         )}
         {category === "Laptop Covers" && (
-          <select name="size" id="size">
-            <option value="13x13">13x13"</option>
-            <option value="15x15">15x15"</option>
+          <select
+            onBlur={e => setVariant(e.target.value)}
+            name="size2"
+            id="size2"
+          >
+            <option value="13x13">13x13</option>
+            <option value="15x15">15x15</option>
           </select>
         )}
       </div>

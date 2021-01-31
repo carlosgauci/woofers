@@ -40,13 +40,9 @@ export const cartReducer = (state, action) => {
         ].quantity--
         return [...state]
       } else {
-        let itemIndex = state.findIndex(
-          item =>
-            item.sku === action.item.sku &&
-            item.description === action.item.description
+        return state.filter(
+          item => item.variantIdentifier !== action.item.variantIdentifier
         )
-        state.splice(itemIndex, 1)
-        return [...state]
       }
 
     default:
