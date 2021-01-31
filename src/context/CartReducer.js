@@ -26,16 +26,13 @@ export const cartReducer = (state, action) => {
       if (
         state.find(
           item =>
-            item.sku === action.item.sku &&
-            item.description === action.item.description &&
+            item.variantIdentifier === action.item.variantIdentifier &&
             item.quantity > 1
         )
       ) {
         state[
           state.findIndex(
-            item =>
-              item.sku === action.item.sku &&
-              item.description === action.item.description
+            item => item.variantIdentifier === action.item.variantIdentifier
           )
         ].quantity--
         return [...state]

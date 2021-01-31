@@ -40,7 +40,7 @@ const ProductCard = ({
     image: fixed,
     slug: slug,
     description: variant,
-    variantIdentifier: name + variant,
+    variantIdentifier: name + category + variant,
   }
 
   return (
