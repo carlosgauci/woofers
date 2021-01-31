@@ -7,7 +7,7 @@ import Announcement from "../Announcement/Announcement"
 import Footer from "../Footer/Footer"
 
 const Layout = ({ children }) => {
-  const [mobileNav, setMobileNav] = useState(false)
+  const [mobileNav, setMobileNav] = useState(true)
 
   return (
     <>

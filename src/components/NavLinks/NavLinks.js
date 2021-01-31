@@ -19,7 +19,7 @@ const query = graphql`
   }
 `
 
-const NavLinks = () => {
+const NavLinks = ({ mobile, setMobileNav }) => {
   const {
     allContentfulWooferCategories: { nodes: data },
   } = useStaticQuery(query)
@@ -27,7 +27,12 @@ const NavLinks = () => {
   const links = data.map(link => {
     return (
       <li key={link.order}>
-        <Link to={link.url}>{link.navLabel ? link.navLabel : link.name}</Link>
+        <Link
+          onClick={mobile ? () => setMobileNav(false) : undefined}
+          to={link.url}
+        >
+          {link.navLabel ? link.navLabel : link.name}
+        </Link>
       </li>
     )
   })
