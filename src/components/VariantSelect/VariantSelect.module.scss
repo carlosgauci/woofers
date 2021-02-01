@@ -1,0 +1,24 @@
+@import "../../css/variables.scss";
+
+.container {
+  label {
+    margin-right: 0.5rem;
+    color: $primary;
+  }
+}
+.select {
+  width: 50%;
+  margin-top: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0;
+  border: 2px solid $primary;
+  color: $primary;
+  background-color: $base-color;
+  font-weight: 600;
+}
+
+.singleProduct {
+  display: block;
+  width: auto;
+  margin-bottom: 0.4rem;
+}

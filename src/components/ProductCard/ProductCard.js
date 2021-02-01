@@ -4,6 +4,7 @@ import styles from "./ProductCard.module.scss"
 import Img from "gatsby-image"
 import toSingular from "../../utils/toSingular"
 import formatPrice from "../../utils/formatPrice"
+import VariantSelect from "../VariantSelect/VariantSelect"
 
 import { CartContext } from "../../context/CartContext"
 
@@ -20,6 +21,8 @@ const ProductCard = ({
   },
 }) => {
   const productLink = `/${category.toLowerCase().replace(/\s+/g, "-")}/${slug}`
+
+  // Set default variant for laptop covers and t-shirts
   const [variant, setVariant] = useState(
     category === "T-shirts"
       ? "XS"
@@ -65,29 +68,7 @@ const ProductCard = ({
         >
           add to cart
         </button>
-        {category === "T-shirts" && (
-          <select
-            onBlur={e => setVariant(e.target.value)}
-            name="size"
-            id="size"
-          >
-            <option value="XS">XS</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-          </select>
-        )}
-        {category === "Laptop Covers" && (
-          <select
-            onBlur={e => setVariant(e.target.value)}
-            name="size2"
-            id="size2"
-          >
-            <option value="13x13">13"x13"</option>
-            <option value="15x15">15"x15"</option>
-          </select>
-        )}
+        <VariantSelect category={category} setVariant={setVariant} />
       </div>
     </section>
   )

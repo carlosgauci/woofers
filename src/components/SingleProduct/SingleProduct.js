@@ -1,8 +1,9 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import styles from "./SingleProduct.module.scss"
 import Img from "gatsby-image"
 import ProductInfo from "../ProductInfo/ProductInfo"
 import toSingular from "../../utils/toSingular"
+import VariantSelect from "../VariantSelect/VariantSelect"
 
 import { CartContext } from "../../context/CartContext"
 
@@ -19,6 +20,14 @@ const SingleProduct = ({
     cartImage: { fixed },
   },
 }) => {
+  const [variant, setVariant] = useState(
+    category === "T-shirts"
+      ? "XS"
+      : category === "Laptop Covers"
+      ? "13x13"
+      : undefined
+  )
+
   const item = {
     name: name,
     sku: sku,
@@ -28,6 +37,8 @@ const SingleProduct = ({
     quantity: 1,
     image: fixed,
     slug: slug,
+    description: variant,
+    variantIdentifier: name + category + variant,
   }
 
   const { dispatch } = useContext(CartContext)
@@ -43,6 +54,11 @@ const SingleProduct = ({
           <p>{toSingular(subCategory || category)}</p>
           <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
           <p>{description}</p>
+          <VariantSelect
+            category={category}
+            setVariant={setVariant}
+            singleProduct={true}
+          />
           <button onClick={() => dispatch({ type: "ADD_ITEM", item })}>
             Add to cart
           </button>
