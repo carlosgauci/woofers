@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
-import styles from "./ProductCard.module.scss"
 import Img from "gatsby-image"
 import toSingular from "../../utils/toSingular"
 import formatPrice from "../../utils/formatPrice"
 import VariantSelect from "../VariantSelect/VariantSelect"
-
+import styles from "./ProductCard.module.scss"
 import { CartContext } from "../../context/CartContext"
 
 const ProductCard = ({

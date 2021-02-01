@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react"
-import styles from "./SingleProduct.module.scss"
 import Img from "gatsby-image"
 import ProductInfo from "../ProductInfo/ProductInfo"
 import toSingular from "../../utils/toSingular"
 import VariantSelect from "../VariantSelect/VariantSelect"
-
+import styles from "./SingleProduct.module.scss"
 import { CartContext } from "../../context/CartContext"
 
 const SingleProduct = ({

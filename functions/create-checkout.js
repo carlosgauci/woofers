@@ -43,14 +43,14 @@ const getLineItems = products => {
 // Add shipping cost
 // Shipping starts at 6€ and increases by 2€ for every extra item
 const addShipping = products => {
-  // const totalItems = products.reduce(
-  //   (prev, current) => prev + current.quantity,
-  //   0
-  // )
+  const totalItems = products.reduce(
+    (prev, current) => prev + current.quantity,
+    0
+  )
   const newProducts = products
   newProducts.push({
     name: "Shipping",
-    price: 400 + newProducts.length * 200,
+    price: 400 + 200 * totalItems,
     quantity: 1,
   })
   return newProducts
