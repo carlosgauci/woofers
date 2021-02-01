@@ -1,4 +1,6 @@
 [build]
+    command = "cd functions && npm i && cd .. && gatsby build"
+    publish = "public"
     functions = "functions"
 
  [[redirects]]
