@@ -84,8 +84,8 @@ const ProductCard = ({
             name="size2"
             id="size2"
           >
-            <option value="13x13">13x13</option>
-            <option value="15x15">15x15</option>
+            <option value="13x13">13"x13"</option>
+            <option value="15x15">15"x15"</option>
           </select>
         )}
       </div>

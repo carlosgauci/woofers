@@ -6,7 +6,6 @@ import { CartContext } from "../../context/CartContext"
 import formatPrice from "../../utils/formatPrice"
 import getStripe from "../../utils/stripe"
 import styles from "./Cart.module.scss"
-import uuid from "react-uuid"
 
 const Cart = () => {
   const { cart, cartTotal } = useContext(CartContext)
@@ -46,7 +45,7 @@ const Cart = () => {
         <div className={styles.cartContainer}>
           <section className={styles.cartItems}>
             {cart.map(item => {
-              return <CartItem key={uuid()} item={item} />
+              return <CartItem key={item.variantIdentifier} item={item} />
             })}
           </section>
           <section className={styles.checkoutBox}>
