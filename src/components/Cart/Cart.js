@@ -5,6 +5,7 @@ import CartItem from "../CartItem/CartItem"
 import { CartContext } from "../../context/CartContext"
 import formatPrice from "../../utils/formatPrice"
 import getStripe from "../../utils/stripe"
+import calculateShipping from "../../utils/calculateShipping"
 import styles from "./Cart.module.scss"
 
 const Cart = () => {
@@ -50,8 +51,16 @@ const Cart = () => {
           </section>
           <section className={styles.checkoutBox}>
             <h3>
-              Total:{" "}
-              <span className={styles.price}>{formatPrice(cartTotal)}</span>{" "}
+              Shipping:{" "}
+              <span className={styles.price}>
+                {formatPrice(calculateShipping(cart))}
+              </span>{" "}
+            </h3>
+            <h3>
+              Total Price:{" "}
+              <span className={styles.price}>
+                {formatPrice(cartTotal + calculateShipping(cart))}
+              </span>{" "}
             </h3>
             <button onClick={() => checkOut()}>Checkout</button>
           </section>

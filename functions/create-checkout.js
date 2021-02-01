@@ -47,7 +47,9 @@ const addShipping = products => {
     (prev, current) => prev + current.quantity,
     0
   )
+
   const newProducts = products
+
   newProducts.push({
     name: "Shipping",
     price: 400 + 200 * totalItems,
