@@ -8,7 +8,7 @@ async function getData(url) {
   return response.json()
 }
 
-// Get the actual items in the cart from the api, to prevent someone messing with prices
+// Get the actual prices for items in the cart from the api, to prevent someone messing with prices
 async function getSelectedProducts(items) {
   const inventory = await getData(
     "https://gallant-wilson-45079a.netlify.app/api/get-products"
@@ -41,22 +41,7 @@ const getLineItems = products => {
 }
 
 // Add shipping cost
-// Shipping starts at 6€ and increases by 2€ for every extra item
 const addShipping = products => {
-  // const totalItems = products.reduce(
-  //   (prev, current) => prev + current.quantity,
-  //   0
-  // )
-
-  // const newProducts = products
-
-  // newProducts.push({
-  //   name: "Shipping",
-  //   price: 400 + 200 * totalItems,
-  //   quantity: 1,
-  // })
-  // return newProducts
-
   // Configure shipping prices for the first item of each type and additional items of that type (printful's shipping is weired)
   const tshirtFirst = 400
   const tshirtAdditional = 150
@@ -100,14 +85,12 @@ const addShipping = products => {
 
   const total = tshirtCost + bagCost + laptopCost + mugCost
 
-  const newProducts = products
-
-  newProducts.push({
+  products.push({
     name: "Shipping",
     price: total,
     quantity: 1,
   })
-  return newProducts
+  return products
 }
 
 exports.handler = async event => {
@@ -115,9 +98,6 @@ exports.handler = async event => {
   const products = await getSelectedProducts(items)
   const productsWithShipping = addShipping(products)
   const lineItems = getLineItems(productsWithShipping)
-
-  console.log(products)
-  console.log(lineItems)
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],

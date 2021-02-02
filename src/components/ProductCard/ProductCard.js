@@ -58,8 +58,8 @@ const ProductCard = ({
           <p className={styles.category}>
             {toSingular(subCategory || category)}
           </p>
+          <p className={styles.price}>{formatPrice(price)}</p>
         </Link>
-        <p className={styles.price}>{formatPrice(price)}</p>
 
         <button
           className={styles.cart}

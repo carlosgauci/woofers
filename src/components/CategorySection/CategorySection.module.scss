@@ -28,6 +28,8 @@
   position: relative;
   width: 15rem;
   margin: 1rem;
+  border: 2px solid $primary;
+  border-bottom: none;
 }
 
 .name {

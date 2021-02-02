@@ -17,6 +17,16 @@ exports.createPages = async ({ graphql, actions }) => {
           name
         }
       }
+
+      infoPages: allContentfulWooferPages {
+        nodes {
+          title
+          slug
+          content {
+            content
+          }
+        }
+      }
     }
   `)
 
@@ -41,6 +51,17 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`src/templates/category-page-template.js`),
       context: {
         category: category.name,
+      },
+    })
+  })
+
+  // Create info pages (terms, privacy etc)
+  result.data.infoPages.nodes.forEach(page => {
+    createPage({
+      path: `/${page.slug}`,
+      component: path.resolve(`src/templates/info-page-template.js`),
+      context: {
+        slug: page.slug,
       },
     })
   })
