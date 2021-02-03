@@ -10,6 +10,7 @@ const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.container}>
         <section className={styles.text}>
+          <h1>WLW</h1>
           <h2>Apparel, gifts & accessories</h2>
           <h2>made for dog lovers</h2>
           <button>Shop Now</button>

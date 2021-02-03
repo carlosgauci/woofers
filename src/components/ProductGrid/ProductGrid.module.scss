@@ -10,12 +10,16 @@
 }
 
 .title {
-  text-align: center;
-  padding: 1rem 0;
-  // font-size: 1.5rem;
-  // background-color: $black;
-  // color: $base-color;
-  // margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: 1.4rem;
+    margin: 0 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
 }
 
 .grid {
