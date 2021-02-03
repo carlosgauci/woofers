@@ -18,7 +18,7 @@ const ProductPageTemplate = ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query myQuery($slug: String, $category: String) {
+  query($slug: String, $category: String) {
     product: contentfulWooferProducts(slug: { eq: $slug }) {
       name
       sku

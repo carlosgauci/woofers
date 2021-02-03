@@ -1,0 +1,15 @@
+@import "../../css/variables.scss";
+
+.container {
+  @include section-center;
+  padding: 2rem 0;
+
+  h3 {
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  h2,
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
