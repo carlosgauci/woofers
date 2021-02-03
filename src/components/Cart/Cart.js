@@ -11,6 +11,9 @@ import styles from "./Cart.module.scss"
 const Cart = () => {
   const { cart, cartTotal } = useContext(CartContext)
 
+  const shippingPrice = formatPrice(calculateShipping(cart))
+  const totalPrice = formatPrice(cartTotal + calculateShipping(cart))
+
   const checkOut = () => {
     const payload = {
       items: cart,
@@ -51,16 +54,10 @@ const Cart = () => {
           </section>
           <section className={styles.checkoutBox}>
             <h3>
-              Shipping:{" "}
-              <span className={styles.price}>
-                {formatPrice(calculateShipping(cart))}
-              </span>{" "}
+              Shipping: <span className={styles.price}>{shippingPrice}</span>
             </h3>
             <h3>
-              Total Price:{" "}
-              <span className={styles.price}>
-                {formatPrice(cartTotal + calculateShipping(cart))}
-              </span>{" "}
+              Total Price: <span className={styles.price}>{totalPrice}</span>
             </h3>
             <button onClick={() => checkOut()}>Checkout</button>
           </section>

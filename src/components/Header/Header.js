@@ -4,6 +4,7 @@ import NavLinks from "../NavLinks/NavLinks"
 import { RiMenuFill } from "react-icons/ri"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import formatPrice from "../../utils/formatPrice"
+import CountUp from "react-countup"
 
 import styles from "./Header.module.scss"
 
@@ -11,6 +12,7 @@ import { CartContext } from "../../context/CartContext"
 
 const Header = ({ setMobileNav }) => {
   const { cartTotal } = useContext(CartContext)
+  const formattedTotal = formatPrice(cartTotal, true)
 
   return (
     <header className={styles.header}>
@@ -33,7 +35,15 @@ const Header = ({ setMobileNav }) => {
         <section className={styles.icons}>
           <Link to="/cart">
             <div className={styles.cartContainer}>
-              <p className={styles.total}>{formatPrice(cartTotal)}</p>
+              <p className={styles.total}>
+                <CountUp
+                  start={formattedTotal < 40 ? 0 : formattedTotal - 10}
+                  end={formattedTotal}
+                  duration={0.5}
+                  decimals={2}
+                  suffix="€"
+                />
+              </p>
               <AiOutlineShoppingCart className={styles.cart} />
             </div>
           </Link>

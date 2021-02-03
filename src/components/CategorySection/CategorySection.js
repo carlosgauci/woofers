@@ -6,8 +6,8 @@ import styles from "./CategorySection.module.scss"
 const CategorySection = ({ categories }) => {
   return (
     <section className={styles.categories}>
+      <h3 className={styles.title}>Shop By Category</h3>
       <div className={styles.container}>
-        <h3 className={styles.title}>Shop By Category</h3>
         <div className={styles.grid}>
           {categories.map(category => {
             return (
