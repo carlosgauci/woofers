@@ -1,21 +1,9 @@
 import React from "react"
 import { motion } from "framer-motion"
+import { containerVariants } from "../../framer/variants"
 import ProductCard from "../ProductCard/ProductCard"
 import SectionTitle from "../SectionTitle/SectionTitle"
 import styles from "./ProductGrid.module.scss"
-
-// Framer motion variants
-const containerVariant = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-}
 
 const ProductGrid = ({ products, title, border, index }) => {
   return (
@@ -24,7 +12,7 @@ const ProductGrid = ({ products, title, border, index }) => {
         {title && <SectionTitle title={title} />}
         <motion.section
           className={`${styles.grid} ${index && styles.gridIndex}`}
-          variants={containerVariant}
+          variants={containerVariants}
           initial="hidden"
           animate="show"
         >

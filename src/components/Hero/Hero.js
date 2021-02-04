@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { motion } from "framer-motion"
+import { buttonVariants } from "../../framer/variants"
 import styles from "./Hero.module.scss"
 
 const Hero = () => {
@@ -13,7 +15,14 @@ const Hero = () => {
           <h1>WLW</h1>
           <h2>Apparel, gifts & accessories</h2>
           <h2>made for dog lovers</h2>
-          <button>Shop Now</button>
+          <motion.button
+            variants={buttonVariants}
+            initial="initial"
+            whileHover="hover"
+            whileTap="pressed"
+          >
+            Shop Now
+          </motion.button>
         </section>
         <section className={styles.images}>
           <Img className={styles.model1} fluid={model1.childImageSharp.fluid} />

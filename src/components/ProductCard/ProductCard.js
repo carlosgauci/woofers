@@ -6,6 +6,11 @@ import toSingular from "../../utils/toSingular"
 import formatPrice from "../../utils/formatPrice"
 import VariantSelect from "../VariantSelect/VariantSelect"
 import styles from "./ProductCard.module.scss"
+import {
+  buttonVariants,
+  imageVariants,
+  cardVariants,
+} from "../../framer/variants"
 import { CartContext } from "../../context/CartContext"
 
 const ProductCard = ({
@@ -46,27 +51,17 @@ const ProductCard = ({
     variantIdentifier: name + category + variant,
   }
 
-  // Framer motion
-  const itemVariant = {
-    hidden: {
-      opacity: 0,
-      x: 200,
-    },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  }
-
   return (
-    <motion.section className={styles.card} variants={itemVariant}>
+    <motion.section className={styles.card} variants={cardVariants}>
       <Link to={productLink}>
-        <div className={styles.image}>
+        <motion.div
+          className={styles.image}
+          variants={imageVariants}
+          initial="initial"
+          whileHover="hover"
+        >
           <Img fluid={fluid} />
-        </div>
+        </motion.div>
       </Link>
       <div className={styles.text}>
         <Link to={productLink}>
@@ -77,12 +72,17 @@ const ProductCard = ({
           <p className={styles.price}>{formatPrice(price)}</p>
         </Link>
 
-        <button
+        <motion.button
+          variants={buttonVariants}
+          initial="initial"
+          whileHover="hover"
+          whileTap="pressed"
+          // transition={{ duration: 0.15 }}
           className={styles.cart}
           onClick={() => dispatch({ type: "ADD_ITEM", item })}
         >
           add to cart
-        </button>
+        </motion.button>
         <VariantSelect category={category} setVariant={setVariant} />
       </div>
     </motion.section>

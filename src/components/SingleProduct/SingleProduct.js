@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react"
 import Img from "gatsby-image"
+import { motion } from "framer-motion"
+import { buttonVariants, singleProductVariants } from "../../framer/variants"
 import ProductInfo from "../ProductInfo/ProductInfo"
 import toSingular from "../../utils/toSingular"
 import VariantSelect from "../VariantSelect/VariantSelect"
@@ -44,26 +46,41 @@ const SingleProduct = ({
 
   return (
     <div className={styles.container}>
-      <div className={styles.image}>
+      <motion.div
+        className={styles.image}
+        variants={singleProductVariants}
+        initial="hiddenLeft"
+        animate="show"
+      >
         <Img fluid={fluid} />
-      </div>
-      <section className={styles.infoSection}>
+      </motion.div>
+      <motion.section
+        className={styles.infoSection}
+        variants={singleProductVariants}
+        initial="hiddenRight"
+        animate="show"
+      >
         <div className={styles.info}>
           <h2>{name}</h2>
           <p>{toSingular(subCategory || category)}</p>
           <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
-          {/* <p>{description}</p> */}
           <VariantSelect
             category={category}
             setVariant={setVariant}
             singleProduct={true}
           />
-          <button onClick={() => dispatch({ type: "ADD_ITEM", item })}>
+          <motion.button
+            onClick={() => dispatch({ type: "ADD_ITEM", item })}
+            variants={buttonVariants}
+            initial="initial"
+            whileHover="hover"
+            whileTap="pressed"
+          >
             Add to cart
-          </button>
+          </motion.button>
         </div>
         <ProductInfo category={category} subCategory={subCategory} />
-      </section>
+      </motion.section>
     </div>
   )
 }
