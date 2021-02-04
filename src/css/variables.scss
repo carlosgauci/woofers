@@ -9,15 +9,16 @@ $primary: #a95695;
 $base-color: $white;
 $header-color: $white;
 $announcement-color: $black;
-// $hero-color: #eef1f3;
 $hero-color: #fdd6fd;
-// $hero-color: #fdf7fd;
 $footer-color: $black;
 
-// Header height
+// Section height
 $header-height: 3.5rem;
 $announcement-height: 2.5rem;
 $footer-height: 6rem;
+$full-height: calc(
+  100vh - #{$header-height} - #{$announcement-height} - #{$footer-height}
+);
 
 // Text
 $font: "Poppins", sans-serif;

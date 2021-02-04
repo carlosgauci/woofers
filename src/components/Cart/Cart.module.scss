@@ -2,10 +2,8 @@
 
 .container {
   @include section-center;
+  min-height: $full-height;
   padding-top: 2rem;
-  min-height: calc(
-    100vh - #{$header-height} - #{$announcement-height} - #{$footer-height}
-  );
 }
 
 .title {

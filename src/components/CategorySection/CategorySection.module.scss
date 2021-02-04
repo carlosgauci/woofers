@@ -3,10 +3,6 @@
 .categories {
   position: relative;
   padding: 2rem 0;
-
-  &:after {
-    @include border-top;
-  }
 }
 
 .container {
@@ -14,10 +10,21 @@
 }
 
 .title {
-  text-align: center;
-  padding: 1rem 0;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
+  @include flex-row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin: 0 1rem;
+    font-size: 1.4rem;
+  }
+
+  svg {
+    font-size: 1.4rem;
+  }
 }
 
 .grid {

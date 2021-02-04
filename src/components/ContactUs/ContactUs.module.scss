@@ -2,6 +2,9 @@
 
 .container {
   @include section-center;
+  @include flex-col;
+  justify-content: center;
+  min-height: $full-height;
   padding: 2rem 0;
 
   h2 {
@@ -13,11 +16,13 @@
     max-width: 500px;
     margin: 0 auto;
     margin-bottom: 1rem;
+    font-size: 1rem;
   }
 }
 
 .form {
   @include flex-col;
+  width: 100%;
   max-width: 500px;
   margin: 0 auto;
   border: 1px solid #000;
@@ -29,9 +34,10 @@
     border-radius: 0;
     border: none;
     border-bottom: 1px solid #000;
+    font-size: 1rem;
   }
   input {
-    height: 2.5rem;
+    height: 3.5rem;
   }
 
   textarea {
@@ -41,6 +47,7 @@
   button {
     @include btn;
     font-weight: 600;
+    font-size: 1.1rem;
     padding: 1rem 0;
   }
 }

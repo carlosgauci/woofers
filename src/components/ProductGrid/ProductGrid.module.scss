@@ -10,8 +10,9 @@
 }
 
 .title {
-  display: flex;
+  @include flex-row;
   justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
 
   h3 {
@@ -20,16 +21,14 @@
     font-weight: 400;
     letter-spacing: 0.1rem;
   }
+  svg {
+    font-size: 1.4rem;
+    color: $black;
+  }
 }
 
 .grid {
   @include grid;
-}
-
-.border {
-  &:after {
-    @include border-top;
-  }
 }
 
 @media only screen and (min-width: 768px) {

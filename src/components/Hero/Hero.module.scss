@@ -31,6 +31,8 @@
 
 .images {
   @include flex-row;
+  align-self: flex-end;
+  align-items: flex-end;
 }
 
 .model1 {
@@ -45,6 +47,13 @@
 @media only screen and (min-width: 768px) {
   .hero {
     height: 700px;
+    // height: calc(100vh - (#{$header-height} + #{$announcement-height}));
+  }
+
+  .images {
+    align-self: flex-end;
+    align-items: flex-end;
+    width: 50%;
   }
 
   .text {
@@ -58,21 +67,19 @@
     text-align: center;
   }
 
-  // .model1 {
-  //   width: 251px;
-  //   height: 700px;
-  //   margin: 0 4rem;
-  // }
-
   .model1 {
     height: 100%;
-    width: 255px;
+    // width: 50%;
+    width: 250px;
     margin: 0 4rem;
   }
+}
 
+@media only screen and (min-width: 1050px) {
   .model2 {
     display: block;
-    width: 193px;
-    height: 500px;
+    height: 100%;
+    // width: 50%;
+    width: 250px;
   }
 }

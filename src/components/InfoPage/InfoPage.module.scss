@@ -2,14 +2,17 @@
 
 .container {
   @include section-center;
+  min-height: $full-height;
   padding: 2rem 0;
 
   h3 {
     margin: 1.5rem 0 0.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
   }
 
-  h2,
   p {
     margin-bottom: 0.5rem;
+    line-height: 1.5;
   }
 }
