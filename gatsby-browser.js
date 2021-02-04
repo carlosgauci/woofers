@@ -13,7 +13,8 @@ export const wrapPageElement = ({ element, props }) => {
   )
 }
 
-const transitionDelay = 250
+// Set a delay for scroll position so it doesn't jump before page transition
+const transitionDelay = 500
 
 export const shouldUpdateScroll = ({
   routerProps: { location },

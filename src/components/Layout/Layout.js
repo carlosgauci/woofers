@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion"
 
 import Header from "../Header/Header"
 import MobileNav from "../MobileNav/MobileNav"
-import Announcement from "../Announcement/Announcement"
 import Footer from "../Footer/Footer"
 
-const duration = 0.25
+// Set durations and settings for page transition
+const duration = 0.5
 
 const variants = {
   initial: {
@@ -34,19 +34,18 @@ const Layout = ({ children, location }) => {
     <>
       <Header mobileNav={mobileNav} setMobileNav={setMobileNav} />
       <MobileNav mobileNav={mobileNav} setMobileNav={setMobileNav} />
-      <Announcement />
       <AnimatePresence>
-        <motion.main
+        <motion.div
           key={location.pathname}
           variants={variants}
           initial="initial"
           animate="enter"
           exit="exit"
         >
-          {children}
-        </motion.main>
+          <main>{children}</main>
+          <Footer />
+        </motion.div>
       </AnimatePresence>
-      <Footer />
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
 import NavLinks from "../NavLinks/NavLinks"
+import Announcement from "../Announcement/Announcement"
 import { RiMenuFill } from "react-icons/ri"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import formatPrice from "../../utils/formatPrice"
@@ -55,6 +56,7 @@ const Header = ({ setMobileNav }) => {
           />
         </section>
       </div>
+      <Announcement />
     </header>
   )
 }
