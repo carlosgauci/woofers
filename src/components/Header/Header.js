@@ -32,6 +32,7 @@ const Header = ({ setMobileNav }) => {
         <section className={styles.nav}>
           <NavLinks />
         </section>
+        {console.log(formattedTotal)}
         <section className={styles.icons}>
           <Link to="/cart">
             <div className={styles.cartContainer}>
