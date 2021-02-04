@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
+import { motion } from "framer-motion"
 import toSingular from "../../utils/toSingular"
 import formatPrice from "../../utils/formatPrice"
 import VariantSelect from "../VariantSelect/VariantSelect"
@@ -45,8 +46,23 @@ const ProductCard = ({
     variantIdentifier: name + category + variant,
   }
 
+  // Framer motion
+  const itemVariant = {
+    hidden: {
+      opacity: 0,
+      x: 200,
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
   return (
-    <section className={styles.card}>
+    <motion.section className={styles.card} variants={itemVariant}>
       <Link to={productLink}>
         <div className={styles.image}>
           <Img fluid={fluid} />
@@ -69,7 +85,7 @@ const ProductCard = ({
         </button>
         <VariantSelect category={category} setVariant={setVariant} />
       </div>
-    </section>
+    </motion.section>
   )
 }
 

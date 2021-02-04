@@ -4,6 +4,7 @@
   height: 450px;
   background-color: $hero-color;
   overflow: hidden;
+  margin-top: $announcement-height + $header-height;
 }
 
 .container {

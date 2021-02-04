@@ -1,18 +1,37 @@
 import React from "react"
+import { motion } from "framer-motion"
 import ProductCard from "../ProductCard/ProductCard"
 import SectionTitle from "../SectionTitle/SectionTitle"
 import styles from "./ProductGrid.module.scss"
+
+// Framer motion variants
+const containerVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+}
 
 const ProductGrid = ({ products, title, border, index }) => {
   return (
     <section className={`${styles.featured} ${border && styles.border}`}>
       <div className={styles.container}>
         {title && <SectionTitle title={title} />}
-        <section className={`${styles.grid} ${index && styles.gridIndex}`}>
+        <motion.section
+          className={`${styles.grid} ${index && styles.gridIndex}`}
+          variants={containerVariant}
+          initial="hidden"
+          animate="show"
+        >
           {products.map(product => (
             <ProductCard product={product} key={product.sku} />
           ))}
-        </section>
+        </motion.section>
       </div>
     </section>
   )

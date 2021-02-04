@@ -2,6 +2,7 @@
 
 .container {
   @include section-center;
+  margin-top: $header-height + $announcement-height;
 }
 
 .title {

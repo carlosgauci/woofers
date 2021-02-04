@@ -1,7 +1,7 @@
 // Colors
 $white: #fff;
 $green: #56a96a;
-$black: rgb(32, 32, 32);
+$black: #202020;
 $grey: #575757;
 $primary: #a95695;
 
@@ -13,8 +13,9 @@ $hero-color: #fdd6fd;
 $footer-color: $black;
 
 // Section height
-$header-height: 3.5rem;
-$announcement-height: 2.5rem;
+$header-height: 6rem;
+$announcement-height: 0rem;
+// $announcement-height: 2.5rem;
 $footer-height: 8rem;
 $full-height: calc(
   100vh - #{$header-height} - #{$announcement-height} - #{$footer-height}

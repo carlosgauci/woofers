@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import { motion } from "framer-motion"
 
 const query = graphql`
   {
@@ -26,14 +27,19 @@ const NavLinks = ({ mobile, setMobileNav }) => {
 
   const links = data.map(link => {
     return (
-      <li key={link.order}>
+      <motion.li
+        initial={{ scale: 1, color: "#202020" }}
+        whileHover={{ scale: 1.1, color: "#a95695" }}
+        transition={{ duration: 0.15 }}
+        key={link.order}
+      >
         <Link
           onClick={mobile ? () => setMobileNav(false) : undefined}
           to={link.url}
         >
           {link.navLabel ? link.navLabel : link.name}
         </Link>
-      </li>
+      </motion.li>
     )
   })
 
