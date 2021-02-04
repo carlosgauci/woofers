@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./Footer.module.scss"
 
@@ -33,6 +33,10 @@ const Footer = () => {
         <section className={styles.social}>
           <AiFillFacebook className={styles.icon} />
           <AiFillInstagram className={styles.icon} />
+          <p>
+            <Link to="/terms">Terms</Link> | <Link to="/privacy">Privacy</Link>{" "}
+            | <Link to="/shipping">Shipping | Returns</Link>
+          </p>
         </section>
         <section className={styles.copyright}>
           <p>Copyright © {new Date().getFullYear()} Woofers</p>
