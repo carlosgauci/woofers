@@ -2,4 +2,45 @@
 
 .container {
   @include section-center;
+  padding: 2rem 0;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  p {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+}
+
+.form {
+  @include flex-col;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #000;
+
+  input,
+  textarea {
+    font-family: $font;
+    padding: 0 0.5rem;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #000;
+  }
+  input {
+    height: 2.5rem;
+  }
+
+  textarea {
+    padding-top: 0.5rem;
+  }
+
+  button {
+    @include btn;
+    font-weight: 600;
+    padding: 1rem 0;
+  }
 }
