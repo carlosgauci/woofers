@@ -13,16 +13,18 @@
   }
 
   svg {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: $black;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .title {
-    h3,
-    svg {
+    h3 {
       font-size: 1.4rem;
+    }
+    svg {
+      font-size: 1.7rem;
     }
   }
 }

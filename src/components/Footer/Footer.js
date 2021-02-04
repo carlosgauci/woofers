@@ -31,8 +31,10 @@ const Footer = () => {
           <Img fixed={fixed} />
         </section>
         <section className={styles.social}>
-          <AiFillFacebook className={styles.icon} />
-          <AiFillInstagram className={styles.icon} />
+          <div className={styles.iconFlex}>
+            <AiFillFacebook className={styles.icon} />
+            <AiFillInstagram className={styles.icon} />
+          </div>
           <p>
             <Link to="/terms">Terms</Link> | <Link to="/privacy">Privacy</Link>{" "}
             | <Link to="/shipping">Shipping | Returns</Link>

@@ -14,11 +14,13 @@
   border: 2px solid $primary;
   color: $primary;
   background-color: $base-color;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .singleProduct {
   display: block;
   width: auto;
+  height: 2.5rem;
+  min-width: 9rem;
   margin-bottom: 0.4rem;
 }

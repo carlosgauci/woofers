@@ -8,7 +8,7 @@
   p {
     color: $white;
     font-size: 0.8rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -20,6 +20,11 @@
 
 .social {
   color: $white;
+}
+.iconFlex {
+  @include flex-row;
+  justify-content: center;
+  margin-bottom: 0.5rem;
 }
 
 .icon {

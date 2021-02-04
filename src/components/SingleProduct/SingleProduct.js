@@ -52,7 +52,7 @@ const SingleProduct = ({
           <h2>{name}</h2>
           <p>{toSingular(subCategory || category)}</p>
           <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
-          <p>{description}</p>
+          {/* <p>{description}</p> */}
           <VariantSelect
             category={category}
             setVariant={setVariant}

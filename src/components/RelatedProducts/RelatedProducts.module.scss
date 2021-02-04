@@ -3,27 +3,11 @@
 .related {
   padding: 2rem 0;
   position: relative;
+  // background-color: rgb(255, 228, 253);
 }
 
 .container {
   @include section-center;
-}
-
-.title {
-  @include flex-row;
-  align-items: center;
-  justify-content: center;
-  h3 {
-    font-weight: 400;
-    font-size: 1.4rem;
-    letter-spacing: 0.1rem;
-    margin: 0 1rem;
-  }
-
-  svg {
-    font-size: 1.4rem;
-    color: $black;
-  }
 }
 
 .grid {
