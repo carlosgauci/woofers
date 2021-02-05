@@ -1,12 +1,13 @@
 @import "../../css/variables.scss";
 
 .announcement {
-  height: 40%;
+  height: $announcement-height;
   background-color: $announcement-color;
   display: flex;
   justify-content: center;
   align-items: center;
-  // margin-top: $header-height;
+  overflow: hidden;
+  transition: height 0.1s ease-in-out;
 
   p {
     font-size: 0.9rem;

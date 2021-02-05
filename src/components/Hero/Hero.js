@@ -2,11 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
-import {
-  buttonVariants,
-  heroVariants,
-  heroContainerVariants,
-} from "../../framer/variants"
+import { buttonVariants, heroVariants } from "../../framer/variants"
 import styles from "./Hero.module.scss"
 
 const Hero = () => {
@@ -42,8 +38,8 @@ const Hero = () => {
             <motion.button
               variants={buttonVariants}
               initial="heroBtnInitial"
-              whileHover="hover"
               animate="heroBtnAnimate"
+              whileHover="hover"
               whileTap="pressed"
             >
               Shop Now

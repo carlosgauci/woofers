@@ -18,14 +18,22 @@ const Header = ({ setMobileNav }) => {
 
   // Framer motion
   const { scrollY } = useViewportScroll()
-  const headerSize = useTransform(scrollY, [0, 100], ["6rem", "4.5rem"])
-  const headerOpacity = useTransform(scrollY, [0, 100], ["1", "0.95"])
+  const headerSize = useTransform(scrollY, [0, 50], ["6rem", "3.5rem"])
+  const announcementSize = useTransform(scrollY, [280, 300], ["2.5rem", "0rem"])
+  const headerShadow = useTransform(
+    scrollY,
+    [200, 300],
+    ["0px 0px 0px 0px #000", "0px 0px 6px 1px rgba(0,0,0,0.1)"]
+  )
 
   return (
     <>
       <motion.header
         className={styles.header}
-        style={{ height: headerSize, opacity: headerOpacity }}
+        style={{
+          height: headerSize,
+          boxShadow: headerShadow,
+        }}
       >
         <div className={styles.container}>
           <section className={styles.title}>
@@ -56,7 +64,12 @@ const Header = ({ setMobileNav }) => {
                     suffix="€"
                   />
                 </p>
-                <AiOutlineShoppingCart className={styles.cart} />
+                <motion.span
+                  initial={{ rotate: 0, y: 0 }}
+                  animate={{ rotate: [6, -6, 6, -6, 0], y: [1, -1, 1, -1, 0] }}
+                >
+                  <AiOutlineShoppingCart className={styles.cart} />
+                </motion.span>
               </div>
             </Link>
 
@@ -66,7 +79,7 @@ const Header = ({ setMobileNav }) => {
             />
           </section>
         </div>
-        <Announcement />
+        <Announcement announcementSize={announcementSize} />
       </motion.header>
     </>
   )

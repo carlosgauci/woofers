@@ -14,12 +14,11 @@ $footer-color: $black;
 
 // Section height
 $header-height: 6rem;
-$announcement-height: 0rem;
+$header-inner-height: 3.5rem;
+$announcement-height: 2.5rem;
 // $announcement-height: 2.5rem;
 $footer-height: 8rem;
-$full-height: calc(
-  100vh - #{$header-height} - #{$announcement-height} - #{$footer-height}
-);
+$full-height: calc(100vh - #{$header-height} - #{$footer-height});
 
 // Text
 $font: "Poppins", sans-serif;

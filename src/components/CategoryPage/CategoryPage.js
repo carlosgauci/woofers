@@ -5,9 +5,7 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 const CategoryPage = ({ category, products }) => {
   return (
     <section className={styles.category}>
-      <div className={styles.container}>
-        <ProductGrid products={products} title={`${category}`} />
-      </div>
+      <ProductGrid products={products} title={`${category}`} />
     </section>
   )
 }

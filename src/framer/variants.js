@@ -50,7 +50,8 @@ export const buttonVariants = {
   },
 
   pressed: {
-    scale: 0.9,
+    scale: 0.975,
+    boxShadow: "0px 0px 2px #000",
   },
 }
 

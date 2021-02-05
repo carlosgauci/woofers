@@ -1,12 +1,8 @@
 @import "../../css/variables.scss";
 
 .category {
-  overflow: hidden;
-}
-
-.container {
-  @include section-center;
-  margin-top: $header-height + $announcement-height;
+  // overflow: hidden;
+  margin-top: $header-height;
 }
 
 .title {

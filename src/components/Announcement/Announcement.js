@@ -1,12 +1,16 @@
 import React from "react"
+import { motion } from "framer-motion"
 
 import styles from "./Announcement.module.scss"
 
-const Announcement = () => {
+const Announcement = ({ announcementSize }) => {
   return (
-    <div className={styles.announcement}>
+    <motion.div
+      className={styles.announcement}
+      style={{ height: announcementSize }}
+    >
       <p>Now shipping to over 25 countries!</p>
-    </div>
+    </motion.div>
   )
 }
 

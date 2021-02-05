@@ -6,7 +6,6 @@
   left: 0;
   width: 100%;
   height: $header-height;
-  // height: $header-height + $announcement-height;
   background-color: $header-color;
   z-index: 99;
 }
@@ -16,7 +15,7 @@
   @include flex-row;
   justify-content: space-between;
   align-items: center;
-  height: 60%;
+  height: $header-inner-height;
 }
 
 .titleContainer {
@@ -65,6 +64,11 @@
 .cartContainer {
   @include flex-row;
   align-items: center;
+
+  span {
+    @include flex-row;
+    align-items: center;
+  }
 }
 
 .total {
