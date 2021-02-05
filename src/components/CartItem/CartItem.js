@@ -1,6 +1,8 @@
 import React, { useContext } from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
+import { cardVariants } from "../../framer/variants"
 import styles from "./CartItem.module.scss"
 import formatPrice from "../../utils/formatPrice"
 import toSingular from "../../utils/toSingular"
@@ -15,7 +17,11 @@ const CartItem = ({ item }) => {
   }`
 
   return (
-    <section className={styles.item}>
+    <motion.section
+      className={styles.item}
+      variants={cardVariants}
+      initial="hiddenX"
+    >
       <Link to={productLink}>
         <Img fixed={item.image} />
       </Link>
@@ -40,7 +46,7 @@ const CartItem = ({ item }) => {
           {formatPrice(item.price * item.quantity)}
         </p>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

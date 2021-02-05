@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
 import NavLinks from "../NavLinks/NavLinks"
 import Announcement from "../Announcement/Announcement"
 import { RiMenuFill } from "react-icons/ri"
@@ -15,9 +16,17 @@ const Header = ({ setMobileNav }) => {
   const { cartTotal } = useContext(CartContext)
   const formattedTotal = formatPrice(cartTotal, true)
 
+  // Framer motion
+  const { scrollY } = useViewportScroll()
+  const headerSize = useTransform(scrollY, [0, 100], ["6rem", "4.5rem"])
+  const headerOpacity = useTransform(scrollY, [0, 100], ["1", "0.95"])
+
   return (
     <>
-      <header className={styles.header}>
+      <motion.header
+        className={styles.header}
+        style={{ height: headerSize, opacity: headerOpacity }}
+      >
         <div className={styles.container}>
           <section className={styles.title}>
             <div className={styles.titleContainer}>
@@ -58,7 +67,7 @@ const Header = ({ setMobileNav }) => {
           </section>
         </div>
         <Announcement />
-      </header>
+      </motion.header>
     </>
   )
 }

@@ -1,5 +1,7 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
+import { containerVariants } from "../../framer/variants"
 import axios from "axios"
 import CartItem from "../CartItem/CartItem"
 import { CartContext } from "../../context/CartContext"
@@ -47,11 +49,16 @@ const Cart = () => {
         </section>
       ) : (
         <div className={styles.cartContainer}>
-          <section className={styles.cartItems}>
+          <motion.section
+            className={styles.cartItems}
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+          >
             {cart.map(item => {
               return <CartItem key={item.variantIdentifier} item={item} />
             })}
-          </section>
+          </motion.section>
           <section className={styles.checkoutBox}>
             <h3>
               Shipping: <span className={styles.price}>{shippingPrice}</span>

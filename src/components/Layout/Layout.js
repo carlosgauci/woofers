@@ -7,7 +7,7 @@ import MobileNav from "../MobileNav/MobileNav"
 import Footer from "../Footer/Footer"
 
 // Set durations and settings for page transition
-const duration = 0.5
+const duration = 0.25
 
 const variants = {
   initial: {

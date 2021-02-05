@@ -2,7 +2,11 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
-import { buttonVariants } from "../../framer/variants"
+import {
+  buttonVariants,
+  heroVariants,
+  heroContainerVariants,
+} from "../../framer/variants"
 import styles from "./Hero.module.scss"
 
 const Hero = () => {
@@ -12,21 +16,63 @@ const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.container}>
         <section className={styles.text}>
-          <h1>WLW</h1>
-          <h2>Apparel, gifts & accessories</h2>
-          <h2>made for dog lovers</h2>
-          <motion.button
-            variants={buttonVariants}
-            initial="initial"
-            whileHover="hover"
-            whileTap="pressed"
+          <motion.h1
+            variants={heroVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ duration: 1, delay: 0.75 }}
           >
-            Shop Now
-          </motion.button>
+            WLW
+          </motion.h1>
+          <motion.div
+            variants={heroVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ duration: 1, delay: 1 }}
+          >
+            <h2>Apparel, gifts & accessories</h2>
+            <h2>made for dog lovers</h2>
+          </motion.div>
+          <motion.div
+            variants={heroVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ duration: 1, delay: 1.25 }}
+          >
+            <motion.button
+              variants={buttonVariants}
+              initial="heroBtnInitial"
+              whileHover="hover"
+              animate="heroBtnAnimate"
+              whileTap="pressed"
+            >
+              Shop Now
+            </motion.button>
+          </motion.div>
         </section>
         <section className={styles.images}>
-          <Img className={styles.model1} fluid={model1.childImageSharp.fluid} />
-          <Img className={styles.model2} fluid={model2.childImageSharp.fluid} />
+          <motion.span
+            variants={heroVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ duration: 1, delay: 0.25 }}
+          >
+            <Img
+              className={styles.model1}
+              fluid={model1.childImageSharp.fluid}
+            />
+          </motion.span>
+          <motion.span
+            variants={heroVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <Img
+              className={styles.model2}
+              fluid={model2.childImageSharp.fluid}
+            />
+          </motion.span>
         </section>
       </div>
     </section>
