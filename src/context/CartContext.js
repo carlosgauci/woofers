@@ -14,6 +14,9 @@ export const CartProvider = props => {
     localData ? JSON.parse(localData) : []
   )
 
+  // Total items in cart
+  const cartItems = cart.reduce((total, item) => total + item.quantity, 0)
+
   // Cart total price
   const cartTotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -27,6 +30,7 @@ export const CartProvider = props => {
 
   const providerValue = {
     cart,
+    cartItems,
     cartTotal,
     dispatch,
   }

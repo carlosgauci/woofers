@@ -13,7 +13,7 @@ import styles from "./Header.module.scss"
 import { CartContext } from "../../context/CartContext"
 
 const Header = ({ setMobileNav }) => {
-  const { cartTotal } = useContext(CartContext)
+  const { cartTotal, cartItems } = useContext(CartContext)
   const formattedTotal = formatPrice(cartTotal, true)
 
   // Framer motion
@@ -64,12 +64,15 @@ const Header = ({ setMobileNav }) => {
                     suffix="€"
                   />
                 </p>
-                <motion.span
-                  initial={{ rotate: 0, y: 0 }}
-                  animate={{ rotate: [6, -6, 6, -6, 0], y: [1, -1, 1, -1, 0] }}
+                <div
+                // initial={{ rotate: 0, y: 0 }}
+                // animate={{ rotate: [6, -6, 6, -6, 0], y: [1, -1, 1, -1, 0] }}
                 >
                   <AiOutlineShoppingCart className={styles.cart} />
-                </motion.span>
+                  {cartItems > 0 && (
+                    <span className={styles.cartIndicator}>{cartItems}</span>
+                  )}
+                </div>
               </div>
             </Link>
 

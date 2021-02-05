@@ -65,7 +65,8 @@
   @include flex-row;
   align-items: center;
 
-  span {
+  div {
+    position: relative;
     @include flex-row;
     align-items: center;
   }
@@ -75,6 +76,19 @@
   min-width: 4rem;
   text-align: center;
   font-weight: 600;
+}
+
+.cartIndicator {
+  background-color: $primary;
+  padding: 0.1rem 0.3rem;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: $base-color;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-3px, -11px);
 }
 
 @media only screen and (min-width: 768px) {
