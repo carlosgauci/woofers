@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => (
   <>
     <Hero />
     <ProductGrid
-      title={"Featured Products"}
+      title={"Featured Items"}
       products={data.featured.nodes}
       index={true}
     />
