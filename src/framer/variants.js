@@ -129,3 +129,20 @@ export const loaderVariants = {
     },
   },
 }
+
+// Dog svg
+
+export const dogVariants = {
+  open: {
+    opacity: 1,
+  },
+  closed: {
+    opacity: [0, 1, 1, 1, 1, 0, 1],
+    transition: {
+      duration: 1,
+      delay: 2,
+      repeat: Infinity,
+      repeatDelay: 10,
+    },
+  },
+}

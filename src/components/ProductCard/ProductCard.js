@@ -2,15 +2,15 @@ import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
-import toSingular from "../../utils/toSingular"
-import formatPrice from "../../utils/formatPrice"
-import VariantSelect from "../VariantSelect/VariantSelect"
-import styles from "./ProductCard.module.scss"
 import {
   buttonVariants,
   imageVariants,
   cardVariants,
 } from "../../framer/variants"
+import toSingular from "../../utils/toSingular"
+import formatPrice from "../../utils/formatPrice"
+import VariantSelect from "../VariantSelect/VariantSelect"
+import styles from "./ProductCard.module.scss"
 import { CartContext } from "../../context/CartContext"
 
 const ProductCard = ({
@@ -38,6 +38,7 @@ const ProductCard = ({
 
   const { dispatch } = useContext(CartContext)
 
+  // Create a new object from the product with the required info needed for cart / Stripe checkout
   const item = {
     name: name,
     sku: sku,

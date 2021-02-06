@@ -29,6 +29,7 @@ const SingleProduct = ({
       : undefined
   )
 
+  // Create a new object from the product with the required info needed for cart / Stripe checkout
   const item = {
     name: name,
     sku: sku,
