@@ -1,0 +1,14 @@
+@import "../../css/variables.scss";
+
+.container {
+  @include section-center;
+  margin-top: $header-height;
+  min-height: $full-height;
+  padding-top: 2rem;
+
+  p,
+  h4 {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}

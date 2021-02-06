@@ -41,8 +41,8 @@ const Footer = () => {
           </p>
         </section>
         <section className={styles.copyright}>
-          <p>Copyright © {new Date().getFullYear()} Woofers</p>
-          <p>Web Design by CGDEV</p>
+          <p>Copyright © {new Date().getFullYear()} We Love Woofers</p>
+          <p>woofers@welovewoofers.com</p>
         </section>
       </div>
     </footer>
