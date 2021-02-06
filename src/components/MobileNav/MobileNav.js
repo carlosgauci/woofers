@@ -15,6 +15,7 @@ const MobileNav = ({ mobileNav, setMobileNav }) => {
           className={styles.icon}
           onClick={() => setMobileNav(!mobileNav)}
         />
+        <NavLinks setMobileNav={setMobileNav} mobile={true} />
         <ul className={styles.links}>
           <li>
             <Link to="/" onClick={() => setMobileNav(false)}>
@@ -26,8 +27,12 @@ const MobileNav = ({ mobileNav, setMobileNav }) => {
               Cart
             </Link>
           </li>
+          <li>
+            <Link to="/contact" onClick={() => setMobileNav(false)}>
+              Contact
+            </Link>
+          </li>
         </ul>
-        <NavLinks setMobileNav={setMobileNav} mobile={true} />
       </div>
     </nav>
   )

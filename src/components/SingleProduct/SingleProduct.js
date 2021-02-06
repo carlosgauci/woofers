@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
 import { buttonVariants, singleProductVariants } from "../../framer/variants"
@@ -65,6 +66,11 @@ const SingleProduct = ({
           <h2>{name}</h2>
           <p>{toSingular(subCategory || category)}</p>
           <p className={styles.price}>{(price / 100).toFixed(2)}€</p>
+          {category === "T-shirts" && (
+            <Link to="/size-guide">
+              <p className={styles.sizeGuide}>Size Guide</p>
+            </Link>
+          )}
           <VariantSelect
             category={category}
             setVariant={setVariant}
