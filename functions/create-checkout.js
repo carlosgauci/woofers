@@ -139,7 +139,7 @@ exports.handler = async event => {
       ],
     },
     success_url: `${process.env.URL}/success`,
-    cancel_url: process.env.URL,
+    cancel_url: `${process.env.URL}/cart`,
     line_items: lineItems,
   })
 

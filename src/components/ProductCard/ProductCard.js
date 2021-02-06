@@ -77,7 +77,6 @@ const ProductCard = ({
           initial="initial"
           whileHover="hover"
           whileTap="pressed"
-          // transition={{ duration: 0.15 }}
           className={styles.cart}
           onClick={() => dispatch({ type: "ADD_ITEM", item })}
         >

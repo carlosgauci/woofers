@@ -50,7 +50,7 @@ export const buttonVariants = {
   },
 
   pressed: {
-    scale: 0.975,
+    scale: 0.95,
     boxShadow: "0px 0px 2px #000",
   },
 }
@@ -113,5 +113,19 @@ export const heroVariants = {
   },
   show: {
     opacity: 1,
+  },
+}
+
+//  Checkout loader
+
+export const loaderVariants = {
+  animation: {
+    rotate: 360,
+    transition: {
+      repeat: Infinity,
+      // repeatType: "reverse",
+      ease: "linear",
+      duration: 3,
+    },
   },
 }

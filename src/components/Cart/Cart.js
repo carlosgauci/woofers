@@ -1,13 +1,19 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
 import { motion } from "framer-motion"
-import { containerVariants } from "../../framer/variants"
+import {
+  containerVariants,
+  buttonVariants,
+  loaderVariants,
+} from "../../framer/variants"
 import axios from "axios"
 import CartItem from "../CartItem/CartItem"
+import SectionTitle from "../SectionTitle/SectionTitle"
 import { CartContext } from "../../context/CartContext"
 import formatPrice from "../../utils/formatPrice"
 import getStripe from "../../utils/stripe"
 import calculateShipping from "../../utils/calculateShipping"
+import { BiLoaderCircle } from "react-icons/bi"
 import styles from "./Cart.module.scss"
 
 const Cart = () => {
@@ -20,6 +26,7 @@ const Cart = () => {
     const payload = {
       items: cart,
     }
+    setLoading(true)
     performPurchase(payload)
   }
 
@@ -37,9 +44,12 @@ const Cart = () => {
     }
   }
 
+  // checkout loader
+  const [loading, setLoading] = useState(false)
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Your Shopping Cart</h2>
+      <SectionTitle title={`Shopping Cart`} />
       {cart.length === 0 ? (
         <section className={styles.error}>
           <p>Your shopping cart is empty!</p>
@@ -66,7 +76,23 @@ const Cart = () => {
             <h3>
               Total Price: <span className={styles.price}>{totalPrice}</span>
             </h3>
-            <button onClick={() => checkOut()}>Checkout</button>
+            <motion.button
+              onClick={() => checkOut()}
+              variants={buttonVariants}
+              initial="initial"
+              whileTap="pressed"
+            >
+              {!loading && <span>Checkout</span>}
+              {loading && (
+                <motion.span
+                  className={styles.loader}
+                  variants={loaderVariants}
+                  animate="animation"
+                >
+                  <BiLoaderCircle />
+                </motion.span>
+              )}
+            </motion.button>
           </section>
         </div>
       )}
