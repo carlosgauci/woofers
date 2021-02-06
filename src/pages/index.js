@@ -1,12 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import SEO from "../components/SEO/SEO"
 import Hero from "../components/Hero/Hero"
 import ProductGrid from "../components/ProductGrid/ProductGrid"
 import CategorySection from "../components/CategorySection/CategorySection"
 
 const IndexPage = ({ data }) => (
   <>
+    <SEO title="Home" />
     <Hero />
     <ProductGrid
       title={"Featured Items"}

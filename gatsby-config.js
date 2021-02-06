@@ -6,7 +6,11 @@ module.exports = {
   siteMetadata: {
     title: `We Love Woofers`,
     description: `Apparel, gifts and accessories made for dog lovers.`,
-    author: `@gatsbyjs`,
+    titleTemplate: `%s | WLW`,
+    url: `https://welovewoofers.com`,
+    image: `image.png`,
+    author: `@WeLoveWoofers`,
+    twitterUsername: `@weLoveWoofers`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

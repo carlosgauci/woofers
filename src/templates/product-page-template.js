@@ -3,10 +3,15 @@ import { graphql } from "gatsby"
 import SingleProduct from "../components/SingleProduct/SingleProduct"
 import RelatedProducts from "../components/RelatedProducts/RelatedProducts"
 import CategorySection from "../components/CategorySection/CategorySection"
+import SEO from "../components/SEO/SEO"
 
 const ProductPageTemplate = ({ data, pageContext }) => {
   return (
     <>
+      <SEO
+        title={data.product.name}
+        description={data.product.description.description}
+      />
       <SingleProduct product={data.product} />
       <RelatedProducts
         related={data.related.nodes}

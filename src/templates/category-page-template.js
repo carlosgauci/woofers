@@ -2,10 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import CategoryPage from "../components/CategoryPage/CategoryPage"
 import CategorySection from "../components/CategorySection/CategorySection"
+import SEO from "../components/SEO/SEO"
 
 const CategoryPageTemplate = ({ pageContext, data }) => {
   return (
     <>
+      <SEO title={pageContext.category} />
       <CategoryPage
         category={pageContext.category}
         products={data.categoryProducts.nodes}
