@@ -10,7 +10,7 @@ async function getData(url) {
 
 // Get the actual prices for items in the cart from the api, to prevent someone messing with prices
 async function getSelectedProducts(items) {
-  const inventory = await getData("https://welovewoofers.com/api/get-products")
+  const inventory = await getData("http://welovewoofers.com/api/get-products")
   let selected = []
   items.forEach(item => {
     const found = inventory.find(p => p.sku === item.sku)
