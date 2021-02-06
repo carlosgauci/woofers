@@ -68,6 +68,7 @@ const SingleProduct = ({
           <VariantSelect
             category={category}
             setVariant={setVariant}
+            variant={variant}
             singleProduct={true}
           />
           <motion.button

@@ -34,18 +34,20 @@ const Layout = ({ children, location }) => {
     <>
       <Header mobileNav={mobileNav} setMobileNav={setMobileNav} />
       <MobileNav mobileNav={mobileNav} setMobileNav={setMobileNav} />
-      <AnimatePresence>
-        <motion.div
-          key={location.pathname}
-          variants={variants}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-          <main>{children}</main>
-          <Footer />
-        </motion.div>
-      </AnimatePresence>
+      <div style={{ overflowX: "hidden" }}>
+        <AnimatePresence>
+          <motion.div
+            key={location.pathname}
+            variants={variants}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+          >
+            <main>{children}</main>
+            <Footer />
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </>
   )
 }

@@ -83,7 +83,11 @@ const ProductCard = ({
         >
           add to cart
         </motion.button>
-        <VariantSelect category={category} setVariant={setVariant} />
+        <VariantSelect
+          category={category}
+          setVariant={setVariant}
+          // variant={variant}
+        />
       </div>
     </motion.section>
   )

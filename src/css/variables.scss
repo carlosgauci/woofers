@@ -51,6 +51,7 @@ $heading-color: $black;
   cursor: pointer;
   font-family: $font;
   outline: none;
+  border-radius: 5px;
 }
 
 @mixin grid {

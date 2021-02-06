@@ -2,11 +2,6 @@
 
 .card {
   max-width: 280px;
-  overflow: hidden;
-  // background-color: $base-color;
-  // border-radius: 20px;
-  // padding: 0 1rem 1rem 1rem;
-  // border: 1px dashed rgba($color: $primary, $alpha: 0.4);
 }
 
 .image {
@@ -24,6 +19,7 @@
 
   button {
     width: 50%;
+    height: 2.4rem;
   }
 }
 

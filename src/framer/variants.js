@@ -45,13 +45,12 @@ export const buttonVariants = {
   hover: {
     scale: 1.015,
     backgroundColor: "#922178",
-    boxShadow: "0px 0px 2px #000",
+    boxShadow: "0px 0px 8px 1px rgba(0,0,0,0.2)",
     transition: { duration: 0.5, repeat: Infinity, repeatType: "reverse" },
   },
 
   pressed: {
     scale: 0.95,
-    boxShadow: "0px 0px 2px #000",
   },
 }
 
@@ -117,7 +116,6 @@ export const heroVariants = {
 }
 
 //  Checkout loader
-
 export const loaderVariants = {
   animation: {
     rotate: 360,
@@ -131,7 +129,6 @@ export const loaderVariants = {
 }
 
 // Dog svg
-
 export const dogVariants = {
   open: {
     opacity: 1,
@@ -142,7 +139,7 @@ export const dogVariants = {
       duration: 1,
       delay: 2,
       repeat: Infinity,
-      repeatDelay: 10,
+      repeatDelay: 7.5,
     },
   },
 }
