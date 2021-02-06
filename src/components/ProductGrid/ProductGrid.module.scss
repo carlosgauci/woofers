@@ -38,11 +38,14 @@
 }
 
 // control number of products in grid on index page
+// 8 items on desktops, 6 items on laptops/tablets, 4 items on mobile
 
 .gridIndex {
   section {
     &:nth-child(5),
-    &:nth-child(6) {
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8) {
       display: none;
     }
   }
@@ -62,9 +65,9 @@
 @media only screen and (min-width: 1495px) {
   .gridIndex {
     section {
-      &:nth-child(5),
-      &:nth-child(6) {
-        display: none;
+      &:nth-child(7),
+      &:nth-child(8) {
+        display: block;
       }
     }
   }

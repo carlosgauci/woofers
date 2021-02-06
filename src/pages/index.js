@@ -27,7 +27,7 @@ export const query = graphql`
   {
     featured: allContentfulWooferProducts(
       filter: { featured: { eq: true } }
-      limit: 6
+      limit: 8
     ) {
       nodes {
         name
@@ -52,7 +52,7 @@ export const query = graphql`
     latest: allContentfulWooferProducts(
       filter: { featured: { eq: false } }
       sort: { fields: createdAt, order: DESC }
-      limit: 6
+      limit: 8
     ) {
       nodes {
         name
