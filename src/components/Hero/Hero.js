@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
 import { buttonVariants, heroVariants } from "../../framer/variants"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import styles from "./Hero.module.scss"
 
 const Hero = () => {
@@ -35,15 +36,17 @@ const Hero = () => {
             animate="show"
             transition={{ duration: 1, delay: 1.25 }}
           >
-            <motion.button
-              variants={buttonVariants}
-              initial="heroBtnInitial"
-              animate="heroBtnAnimate"
-              whileHover="hover"
-              whileTap="pressed"
-            >
-              Shop Now
-            </motion.button>
+            <AnchorLink to="/#featured">
+              <motion.button
+                variants={buttonVariants}
+                initial="heroBtnInitial"
+                animate="heroBtnAnimate"
+                whileHover="hover"
+                whileTap="pressed"
+              >
+                Shop Now
+              </motion.button>
+            </AnchorLink>
           </motion.div>
         </section>
         <section className={styles.images}>

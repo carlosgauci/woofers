@@ -14,6 +14,7 @@ const IndexPage = ({ data }) => (
       title={"Featured Items"}
       products={data.featured.nodes}
       index={true}
+      anchor={true}
     />
     <ProductGrid
       title={"Latest Additions"}

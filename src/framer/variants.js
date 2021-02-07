@@ -49,6 +49,12 @@ export const buttonVariants = {
     transition: { duration: 0.5, repeat: Infinity, repeatType: "reverse" },
   },
 
+  hoverNoScale: {
+    backgroundColor: "#922178",
+    boxShadow: "0px 0px 8px 1px rgba(0,0,0,0.2)",
+    transition: { duration: 0.5, repeat: Infinity, repeatType: "reverse" },
+  },
+
   pressed: {
     scale: 0.95,
   },
@@ -139,7 +145,7 @@ export const dogVariants = {
       duration: 1,
       delay: 2,
       repeat: Infinity,
-      repeatDelay: 7.5,
+      repeatDelay: 6,
     },
   },
 }

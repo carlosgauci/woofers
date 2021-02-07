@@ -5,9 +5,12 @@ import ProductCard from "../ProductCard/ProductCard"
 import SectionTitle from "../SectionTitle/SectionTitle"
 import styles from "./ProductGrid.module.scss"
 
-const ProductGrid = ({ products, title, border, index }) => {
+const ProductGrid = ({ products, title, border, index, anchor }) => {
   return (
-    <div className={styles.overflowWrapper}>
+    <div
+      className={styles.overflowWrapper}
+      id={anchor ? "featured" : undefined}
+    >
       <section className={`${styles.featured} ${border && styles.border}`}>
         <div className={styles.container}>
           {title && <SectionTitle title={title} />}

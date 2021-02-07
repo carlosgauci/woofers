@@ -81,7 +81,7 @@ const SingleProduct = ({
             onClick={() => dispatch({ type: "ADD_ITEM", item })}
             variants={buttonVariants}
             initial="initial"
-            whileHover="hover"
+            whileHover="hoverNoScale"
             whileTap="pressed"
           >
             Add to cart

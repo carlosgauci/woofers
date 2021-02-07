@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react"
+import React, { useEffect, useContext, useCallback } from "react"
 import SectionTitle from "../SectionTitle/SectionTitle"
 import { CartContext } from "../../context/CartContext"
 import styles from "./OrderSuccess.module.scss"
@@ -6,9 +6,13 @@ import styles from "./OrderSuccess.module.scss"
 const OrderSuccess = () => {
   const { dispatch } = useContext(CartContext)
 
-  useEffect(() => {
+  const emptyCart = useCallback(() => {
     dispatch({ type: "EMPTY_CART" })
-  }, [])
+  }, [dispatch])
+
+  useEffect(() => {
+    emptyCart()
+  }, [emptyCart])
 
   return (
     <section className={styles.container}>

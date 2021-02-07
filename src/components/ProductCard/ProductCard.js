@@ -76,18 +76,14 @@ const ProductCard = ({
         <motion.button
           variants={buttonVariants}
           initial="initial"
-          whileHover="hover"
+          whileHover="hoverNoScale"
           whileTap="pressed"
           className={styles.cart}
           onClick={() => dispatch({ type: "ADD_ITEM", item })}
         >
           add to cart
         </motion.button>
-        <VariantSelect
-          category={category}
-          setVariant={setVariant}
-          // variant={variant}
-        />
+        <VariantSelect category={category} setVariant={setVariant} />
       </div>
     </motion.section>
   )

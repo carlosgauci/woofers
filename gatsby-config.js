@@ -8,7 +8,7 @@ module.exports = {
     description: `Apparel, gifts and accessories made for dog lovers.`,
     titleTemplate: `%s | WLW`,
     url: `https://welovewoofers.com`,
-    image: `image.png`,
+    image: `/image.png`,
     author: `@WeLoveWoofers`,
     twitterUsername: `@weLoveWoofers`,
   },
@@ -54,6 +54,13 @@ module.exports = {
             },
           ],
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -50,
+        duration: 500,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
