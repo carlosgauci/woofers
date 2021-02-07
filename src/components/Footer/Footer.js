@@ -32,8 +32,15 @@ const Footer = () => {
         </section>
         <section className={styles.social}>
           <div className={styles.iconFlex}>
-            <AiFillFacebook className={styles.icon} />
-            <AiFillInstagram className={styles.icon} />
+            <Link to="https://www.facebook.com/WeLoveWoofers/" target="_blank">
+              <AiFillFacebook className={styles.icon} />
+            </Link>
+            <Link
+              to="https://www.instagram.com/welovewoofers_/"
+              target="_blank"
+            >
+              <AiFillInstagram className={styles.icon} />
+            </Link>
           </div>
           <p>
             <Link to="/terms">Terms</Link> | <Link to="/privacy">Privacy</Link>{" "}

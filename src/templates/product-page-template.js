@@ -9,8 +9,9 @@ const ProductPageTemplate = ({ data, pageContext }) => {
   return (
     <>
       <SEO
-        title={data.product.name}
+        title={`${data.product.name} - ${data.product.category}`}
         description={data.product.description.description}
+        image={data.product.ogImage.file.url}
       />
       <SingleProduct product={data.product} />
       <RelatedProducts
@@ -42,6 +43,11 @@ export const query = graphql`
       cartImage: image {
         fixed(width: 125, height: 125, quality: 90) {
           ...GatsbyContentfulFixed_withWebp
+        }
+      }
+      ogImage: image {
+        file {
+          url
         }
       }
     }
