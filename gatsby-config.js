@@ -57,13 +57,13 @@ module.exports = {
     //     },
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`poppins\:400,600`],
-        display: "swap",
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [`poppins\:400,600`],
+    //     display: "swap",
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
