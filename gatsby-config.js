@@ -58,14 +58,10 @@ module.exports = {
     //   },
     // },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            variants: [`400`, `600`],
-          },
-        ],
+        fonts: [`poppins\:400,600`],
+        display: "swap",
       },
     },
     {
@@ -75,8 +71,5 @@ module.exports = {
         duration: 500,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
