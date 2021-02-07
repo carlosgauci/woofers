@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 import {
   buttonVariants,
   imageVariants,
   cardVariants,
 } from "../../framer/variants"
+import { AiFillCheckCircle } from "react-icons/ai"
 import toSingular from "../../utils/toSingular"
 import formatPrice from "../../utils/formatPrice"
 import VariantSelect from "../VariantSelect/VariantSelect"
@@ -52,6 +53,17 @@ const ProductCard = ({
     variantIdentifier: name + category + variant,
   }
 
+  // Framer motion control for added to cart confirmation
+  const controls = useAnimation()
+
+  const addToCart = item => {
+    dispatch({ type: "ADD_ITEM", item })
+    controls.start({
+      opacity: [0, 1, 1, 1, 0],
+      transition: { duration: 3 },
+    })
+  }
+
   return (
     <motion.section className={styles.card} variants={cardVariants}>
       <Link to={productLink}>
@@ -61,7 +73,7 @@ const ProductCard = ({
           initial="initial"
           whileHover="hover"
         >
-          <Img fluid={fluid} />
+          <Img fluid={fluid} alt={`${name} - ${subCategory || category}`} />
         </motion.div>
       </Link>
       <div className={styles.text}>
@@ -79,9 +91,12 @@ const ProductCard = ({
           whileHover="hoverNoScale"
           whileTap="pressed"
           className={styles.cart}
-          onClick={() => dispatch({ type: "ADD_ITEM", item })}
+          onClick={() => addToCart(item)}
         >
           add to cart
+          <motion.span className={styles.icon} animate={controls}>
+            <AiFillCheckCircle />
+          </motion.span>
         </motion.button>
         <VariantSelect category={category} setVariant={setVariant} />
       </div>

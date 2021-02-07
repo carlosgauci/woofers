@@ -10,6 +10,7 @@ const SizeGuide = () => {
     <div className={styles.container}>
       <section className={styles.measure}>
         <Img
+          alt="Size guide"
           className={styles.modelImage}
           fixed={model.childImageSharp.fixed}
         />

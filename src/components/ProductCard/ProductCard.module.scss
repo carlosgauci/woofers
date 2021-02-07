@@ -20,6 +20,19 @@
   button {
     width: 50%;
     height: 2.4rem;
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 0.3rem;
+      right: -2rem;
+      opacity: 0;
+
+      svg {
+        color: $green;
+        font-size: 1.6rem;
+      }
+    }
   }
 }
 

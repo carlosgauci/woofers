@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 import { buttonVariants, singleProductVariants } from "../../framer/variants"
 import ProductInfo from "../ProductInfo/ProductInfo"
 import toSingular from "../../utils/toSingular"
 import VariantSelect from "../VariantSelect/VariantSelect"
+import { AiFillCheckCircle } from "react-icons/ai"
 import styles from "./SingleProduct.module.scss"
 import { CartContext } from "../../context/CartContext"
 
@@ -46,6 +47,17 @@ const SingleProduct = ({
 
   const { dispatch } = useContext(CartContext)
 
+  // Framer motion control for added to cart confirmation
+  const controls = useAnimation()
+
+  const addToCart = item => {
+    dispatch({ type: "ADD_ITEM", item })
+    controls.start({
+      opacity: [0, 1, 1, 1, 0],
+      transition: { duration: 3 },
+    })
+  }
+
   return (
     <div className={styles.container}>
       <motion.div
@@ -54,7 +66,7 @@ const SingleProduct = ({
         initial="hiddenLeft"
         animate="show"
       >
-        <Img fluid={fluid} />
+        <Img fluid={fluid} alt={`${name} - ${subCategory || category}`} />
       </motion.div>
       <motion.section
         className={styles.infoSection}
@@ -78,13 +90,16 @@ const SingleProduct = ({
             singleProduct={true}
           />
           <motion.button
-            onClick={() => dispatch({ type: "ADD_ITEM", item })}
+            onClick={() => addToCart(item)}
             variants={buttonVariants}
             initial="initial"
             whileHover="hoverNoScale"
             whileTap="pressed"
           >
             Add to cart
+            <motion.span className={styles.icon} animate={controls}>
+              <AiFillCheckCircle />
+            </motion.span>
           </motion.button>
         </div>
         <ProductInfo category={category} subCategory={subCategory} />

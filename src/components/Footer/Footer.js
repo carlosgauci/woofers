@@ -28,7 +28,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <section className={styles.payments}>
-          <Img fixed={fixed} />
+          <Img fixed={fixed} alt="Payments accepted" />
         </section>
         <section className={styles.social}>
           <div className={styles.iconFlex}>
@@ -37,7 +37,8 @@ const Footer = () => {
           </div>
           <p>
             <Link to="/terms">Terms</Link> | <Link to="/privacy">Privacy</Link>{" "}
-            | <Link to="/shipping">Shipping | Returns</Link>
+            | <Link to="/shipping">Shipping | Returns</Link> |{" "}
+            <Link to="/contact">Contact</Link>
           </p>
         </section>
         <section className={styles.copyright}>

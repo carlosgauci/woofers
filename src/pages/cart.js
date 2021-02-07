@@ -4,7 +4,7 @@ import SEO from "../components/SEO/SEO"
 
 const CartPage = () => (
   <>
-    <SEO title="Cart" />
+    <SEO title="Cart" index="noindex" />
     <Cart />
   </>
 )

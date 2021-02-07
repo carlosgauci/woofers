@@ -24,6 +24,19 @@
     font-size: 1rem;
     font-weight: 600;
     width: 9rem;
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 0.4rem;
+      right: -2rem;
+      opacity: 0;
+
+      svg {
+        color: $green;
+        font-size: 1.6rem;
+      }
+    }
   }
 }
 

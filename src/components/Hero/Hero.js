@@ -57,6 +57,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.25 }}
           >
             <Img
+              alt="Model 1"
               className={styles.model1}
               fluid={model1.childImageSharp.fluid}
             />
@@ -68,6 +69,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Img
+              alt="Model 2"
               className={styles.model2}
               fluid={model2.childImageSharp.fluid}
             />

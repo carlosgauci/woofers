@@ -14,7 +14,7 @@ const CategorySection = ({ categories }) => {
             return (
               <section key={category.order} className={styles.categoryCard}>
                 <Link to={category.url}>
-                  <Img fluid={category.image.fluid} />
+                  <Img fluid={category.image.fluid} alt={category.name} />
                   <h4 className={styles.name}>{category.name}</h4>
                 </Link>
               </section>
