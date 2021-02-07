@@ -43,6 +43,13 @@ const ProductInfo = ({ category, subCategory }) => {
           <li>Relaxed fit.</li>
         </ul>
       )}
+      {category === "T-shirts" && subCategory === "T-shirts" && (
+        <ul>
+          <li>Soft and light, with just the right amount of stretch.</li>
+          <li>100% combed and ring-spun cotton.</li>
+          <li>Unisex cut is flattering on both men and women.</li>
+        </ul>
+      )}
       {category === "Phone Cases" && (
         <ul>
           <li>A sleek, solid case that fits your phone perfectly.</li>

@@ -30,7 +30,7 @@ export const query = graphql`
         subCategory
         price
         image {
-          fluid(maxWidth: 300) {
+          fluid(quality: 75, maxWidth: 300) {
             ...GatsbyContentfulFluid_withWebp
           }
         }
