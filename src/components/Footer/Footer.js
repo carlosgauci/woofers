@@ -9,7 +9,7 @@ const query = graphql`
   {
     file(relativePath: { eq: "payments.png" }) {
       childImageSharp {
-        fixed(width: 250, height: 58, quality: 100) {
+        fixed(width: 250, height: 58) {
           ...GatsbyImageSharpFixed_withWebp
         }
       }
