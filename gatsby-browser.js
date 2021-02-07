@@ -2,6 +2,8 @@ import "./src/css/global-styles.scss"
 import React from "react"
 import Layout from "./src/components/Layout/Layout"
 import { CartProvider } from "./src/context/CartContext"
+import "@fontsource/poppins/400.css"
+import "@fontsource/poppins/600.css"
 
 export const wrapPageElement = ({ element, props }) => {
   return (
