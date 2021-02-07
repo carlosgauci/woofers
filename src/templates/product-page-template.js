@@ -11,7 +11,7 @@ const ProductPageTemplate = ({ data, pageContext }) => {
       <SEO
         title={`${data.product.name} - ${data.product.category}`}
         description={data.product.description.description}
-        image={data.product.ogImage.file.url}
+        image={`http:${data.product.ogImage.file.url}`}
       />
       <SingleProduct product={data.product} />
       <RelatedProducts
