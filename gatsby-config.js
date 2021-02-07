@@ -43,17 +43,29 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-webfonts`,
+    //   options: {
+    //     fonts: {
+    //       google: [
+    //         {
+    //           family: "Poppins",
+    //           variants: ["400", "600"],
+    //           fontDisplay: "swap",
+    //         },
+    //       ],
+    //     },
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-webfonts`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        fonts: {
-          google: [
-            {
-              family: "Poppins",
-              variants: ["400", "600"],
-            },
-          ],
-        },
+        fonts: [
+          {
+            family: `Poppins`,
+            variants: [`400`, `600`],
+          },
+        ],
       },
     },
     {
