@@ -32,7 +32,6 @@ const Cart = () => {
 
   const performPurchase = async payload => {
     const response = await axios.post("/api/create-checkout", payload)
-    console.log("response", response)
     const stripe = await getStripe(response.data.publishableKey)
 
     const { error } = await stripe.redirectToCheckout({

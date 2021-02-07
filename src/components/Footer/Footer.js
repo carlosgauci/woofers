@@ -32,15 +32,20 @@ const Footer = () => {
         </section>
         <section className={styles.social}>
           <div className={styles.iconFlex}>
-            <Link to="https://www.facebook.com/WeLoveWoofers/" target="_blank">
-              <AiFillFacebook className={styles.icon} />
-            </Link>
-            <Link
-              to="https://www.instagram.com/welovewoofers_/"
+            <a
+              href="https://www.facebook.com/WeLoveWoofers/"
               target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillFacebook className={styles.icon} />
+            </a>
+            <a
+              href="https://www.instagram.com/welovewoofers_/"
+              target="_blank"
+              rel="noreferrer"
             >
               <AiFillInstagram className={styles.icon} />
-            </Link>
+            </a>
           </div>
           <p>
             <Link to="/terms">Terms</Link> | <Link to="/privacy">Privacy</Link>{" "}

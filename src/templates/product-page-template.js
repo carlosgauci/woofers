@@ -36,7 +36,7 @@ export const query = graphql`
         description
       }
       image {
-        fluid {
+        fluid(quality: 90, maxWidth: 500) {
           ...GatsbyContentfulFluid_withWebp
         }
       }
