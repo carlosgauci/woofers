@@ -63,7 +63,7 @@ export const query = graphql`
         subCategory
         price
         image {
-          fluid {
+          fluid(quality: 80) {
             ...GatsbyContentfulFluid_withWebp
           }
         }
@@ -83,7 +83,7 @@ export const query = graphql`
         name
         url
         image {
-          fluid {
+          fluid(quality: 80) {
             ...GatsbyContentfulFluid_withWebp
           }
         }

@@ -65,7 +65,7 @@ export const query = graphql`
         sku
         slug
         image {
-          fluid(quality: 75, maxWidth: 300) {
+          fluid(quality: 80, maxWidth: 300) {
             ...GatsbyContentfulFluid_withWebp
           }
         }
@@ -85,7 +85,7 @@ export const query = graphql`
         name
         url
         image {
-          fluid(maxWidth: 300) {
+          fluid(quality: 80, maxWidth: 300) {
             ...GatsbyContentfulFluid_withWebp
           }
         }
