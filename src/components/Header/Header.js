@@ -8,10 +8,8 @@ import { RiMenuFill } from "react-icons/ri"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import formatPrice from "../../utils/formatPrice"
 import CountUp from "react-countup"
-
-import styles from "./Header.module.scss"
-
 import { CartContext } from "../../context/CartContext"
+import styles from "./Header.module.scss"
 
 const Header = ({ setMobileNav }) => {
   const { cartTotal, cartItems } = useContext(CartContext)
@@ -60,10 +58,7 @@ const Header = ({ setMobileNav }) => {
                     suffix="€"
                   />
                 </p>
-                <div
-                // initial={{ rotate: 0, y: 0 }}
-                // animate={{ rotate: [6, -6, 6, -6, 0], y: [1, -1, 1, -1, 0] }}
-                >
+                <div>
                   <AiOutlineShoppingCart className={styles.cart} />
                   {cartItems > 0 && (
                     <span className={styles.cartIndicator}>{cartItems}</span>

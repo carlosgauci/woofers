@@ -1,0 +1,21 @@
+@import "../../css/variables.scss";
+
+.container {
+  @include section-center;
+  min-height: $full-height;
+  margin-top: $header-height;
+  padding-top: 2rem;
+
+  h1,
+  p {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    @include btn;
+    display: block;
+    margin: 1rem auto;
+    font-weight: 600;
+  }
+}

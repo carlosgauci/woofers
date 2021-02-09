@@ -9,24 +9,6 @@
   @include section-center;
 }
 
-.title {
-  @include flex-row;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-
-  h3 {
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    margin: 0 1rem;
-    font-size: 1.4rem;
-  }
-
-  svg {
-    font-size: 1.4rem;
-  }
-}
-
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +17,7 @@
 
 .categoryCard {
   position: relative;
-  width: 15rem;
+  width: 16rem;
   margin: 1rem;
   border: 2px solid $primary;
   border-bottom: none;
@@ -55,6 +37,6 @@
 
 @media only screen and (min-width: 768px) {
   .categoryCard {
-    width: 18rem;
+    width: 19rem;
   }
 }

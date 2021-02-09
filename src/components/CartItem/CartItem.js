@@ -3,12 +3,11 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 import { motion } from "framer-motion"
 import { cardVariants } from "../../framer/variants"
-import styles from "./CartItem.module.scss"
+import { CartContext } from "../../context/CartContext"
 import formatPrice from "../../utils/formatPrice"
 import toSingular from "../../utils/toSingular"
 import { FaMinus, FaPlus } from "react-icons/fa"
-
-import { CartContext } from "../../context/CartContext"
+import styles from "./CartItem.module.scss"
 
 const CartItem = ({ item }) => {
   const { dispatch } = useContext(CartContext)

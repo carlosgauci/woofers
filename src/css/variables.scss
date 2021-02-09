@@ -2,28 +2,26 @@
 $white: #fff;
 $green: #3d9e54;
 $black: #202020;
-$grey: #575757;
+$grey: #4b4b4b;
 $primary: #a95695;
 
 // Section colors
 $base-color: $white;
 $header-color: $white;
 $announcement-color: $black;
-$hero-color: #f0f0f0;
-// $hero-color: #fdd6fd;
+$hero-color: hsl(200, 25%, 94%);
 $footer-color: $black;
 
 // Section height
 $header-height: 6rem;
 $header-inner-height: 3.5rem;
 $announcement-height: 2.5rem;
-// $announcement-height: 2.5rem;
 $footer-height: 9rem;
 $full-height: calc(100vh - #{$header-height} - #{$footer-height});
 
 // Text
 $font: "Poppins", sans-serif;
-$text-color: $black;
+$text-color: $grey;
 $heading-color: $black;
 
 // Mixins
@@ -48,7 +46,7 @@ $heading-color: $black;
   border: none;
   background-color: $primary;
   padding: 0.5rem 1rem;
-  color: $white;
+  color: rgba($color: $white, $alpha: 0.9);
   cursor: pointer;
   font-family: $font;
   outline: none;
