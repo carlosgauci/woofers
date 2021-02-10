@@ -41,7 +41,7 @@ const getLineItems = products => {
 // Add shipping cost
 const addShipping = products => {
   // Configure shipping prices for the first item of each type and additional items of that type (printful's shipping is weired)
-  const tshirtFirst = 1
+  const tshirtFirst = 400
   const tshirtAdditional = 150
   const bagFirst = 400
   const bagAdditional = 150
