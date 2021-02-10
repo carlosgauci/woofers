@@ -1,3 +1,23 @@
+// Page transitions
+const duration = 0.25
+export const pageVariants = {
+  initial: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: duration,
+      delay: duration,
+      when: "beforeChildren",
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: duration },
+  },
+}
+
 // Product grid
 export const containerVariants = {
   hidden: {

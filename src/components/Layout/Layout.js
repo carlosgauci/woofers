@@ -1,31 +1,11 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { motion, AnimatePresence } from "framer-motion"
-
+import { pageVariants } from "../../framer/variants"
 import Header from "../Header/Header"
 import MobileNav from "../MobileNav/MobileNav"
 import Footer from "../Footer/Footer"
-
-// Set durations and settings for page transition
-const duration = 0.25
-
-const variants = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 1,
-    transition: {
-      duration: duration,
-      delay: duration,
-      when: "beforeChildren",
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: duration },
-  },
-}
+import styles from "./Layout.module.scss"
 
 const Layout = ({ children, location }) => {
   const [mobileNav, setMobileNav] = useState(false)
@@ -34,20 +14,19 @@ const Layout = ({ children, location }) => {
     <>
       <Header mobileNav={mobileNav} setMobileNav={setMobileNav} />
       <MobileNav mobileNav={mobileNav} setMobileNav={setMobileNav} />
-      <div style={{ overflowX: "hidden" }}>
-        <AnimatePresence>
-          <motion.div
-            key={location.pathname}
-            variants={variants}
-            initial="initial"
-            animate="enter"
-            exit="exit"
-          >
-            <main>{children}</main>
-            <Footer />
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      <AnimatePresence>
+        <motion.div
+          className={styles.content}
+          key={location.pathname}
+          variants={pageVariants}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+        >
+          <main className={styles.main}>{children}</main>
+          <Footer />
+        </motion.div>
+      </AnimatePresence>
     </>
   )
 }

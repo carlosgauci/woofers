@@ -1,0 +1,11 @@
+@import "../../css/variables.scss";
+
+.content {
+  @include flex-col;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.main {
+  flex: 1;
+}

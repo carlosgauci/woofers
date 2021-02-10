@@ -7,26 +7,26 @@ import styles from "./ProductGrid.module.scss"
 
 const ProductGrid = ({ products, title, border, index, anchor }) => {
   return (
-    <div
-      className={styles.overflowWrapper}
-      id={anchor ? "featured" : undefined}
+    // <div id={anchor && "featured"}>
+    <section
+      id={anchor && "featured"}
+      className={`${styles.featured} ${border && styles.border}`}
     >
-      <section className={`${styles.featured} ${border && styles.border}`}>
-        <div className={styles.container}>
-          {title && <SectionTitle title={title} />}
-          <motion.section
-            className={`${styles.grid} ${index && styles.gridIndex}`}
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
-          >
-            {products.map(product => (
-              <ProductCard product={product} key={product.sku} />
-            ))}
-          </motion.section>
-        </div>
-      </section>
-    </div>
+      <div className={styles.container}>
+        {title && <SectionTitle title={title} />}
+        <motion.section
+          className={`${styles.grid} ${index && styles.gridIndex}`}
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+        >
+          {products.map(product => (
+            <ProductCard product={product} key={product.sku} />
+          ))}
+        </motion.section>
+      </div>
+    </section>
+    // </div>
   )
 }
 

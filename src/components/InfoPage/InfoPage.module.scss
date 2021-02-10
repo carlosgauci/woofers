@@ -2,7 +2,6 @@
 
 .container {
   @include section-center;
-  min-height: $full-height;
   padding: 2rem 0;
   margin-top: $header-height;
 

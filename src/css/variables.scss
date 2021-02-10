@@ -17,7 +17,6 @@ $header-height: 6rem;
 $header-inner-height: 3.5rem;
 $announcement-height: 2.5rem;
 $footer-height: 9rem;
-$full-height: calc(100vh - #{$header-height} - #{$footer-height});
 
 // Text
 $font: "Poppins", sans-serif;
@@ -27,7 +26,6 @@ $heading-color: $black;
 // Mixins
 @mixin section-center {
   width: 90vw;
-  height: 100%;
   margin: 0 auto;
   max-width: 1350px;
 }

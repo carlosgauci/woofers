@@ -3,8 +3,6 @@
 .container {
   @include section-center;
   @include flex-col;
-  justify-content: center;
-  min-height: $full-height;
   padding: 2rem 0;
   margin-top: $header-height;
 
