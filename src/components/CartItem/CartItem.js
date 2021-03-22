@@ -21,15 +21,20 @@ const CartItem = ({ item }) => {
       variants={cardVariants}
       initial="hiddenX"
     >
+      {/* Item image */}
       <Link to={productLink}>
         <Img fixed={item.image} />
       </Link>
+
+      {/* Item info */}
       <div className={styles.text}>
         <h4>{item.name}</h4>
         <p className={styles.category}>
           {toSingular(item.category)}{" "}
           {item.description && `- ${item.description}`}
         </p>
+
+        {/* Quantity */}
         <div className={styles.quantity}>
           <FaMinus
             onClick={() => dispatch({ type: "REMOVE_ITEM", item })}
@@ -41,6 +46,8 @@ const CartItem = ({ item }) => {
             className={styles.icon}
           />
         </div>
+
+        {/* Price */}
         <p className={styles.price}>
           {formatPrice(item.price * item.quantity)}
         </p>

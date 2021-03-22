@@ -49,6 +49,8 @@ const Cart = () => {
   return (
     <div className={styles.container}>
       <SectionTitle title={`Shopping Cart`} />
+
+      {/* If cart is empty, show cart is empty message */}
       {cart.length === 0 ? (
         <section className={styles.error}>
           <p>Your shopping cart is empty!</p>
@@ -64,10 +66,13 @@ const Cart = () => {
             initial="hidden"
             animate="show"
           >
+            {/* Map cart items */}
             {cart.map(item => {
               return <CartItem key={item.variantIdentifier} item={item} />
             })}
           </motion.section>
+
+          {/* Totals / Checkout section */}
           <section className={styles.checkoutBox}>
             <h3>
               Shipping: <span className={styles.price}>{shippingPrice}</span>
@@ -80,6 +85,7 @@ const Cart = () => {
               variants={buttonVariants}
               initial="initial"
               whileTap="pressed"
+              disabled={loading}
             >
               {!loading && <span>Checkout</span>}
               {loading && (
