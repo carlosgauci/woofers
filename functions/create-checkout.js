@@ -8,9 +8,9 @@ async function getData(url) {
   return response.json()
 }
 
-// Get the actual prices for items in the cart from the api, to prevent someone messing with prices
+// Get the item prices from the api
 async function getSelectedProducts(items) {
-  const inventory = await getData("http://welovewoofers.com/api/get-products")
+  const inventory = await getData("https://welovewoofers.com/api/get-products")
   let selected = []
   items.forEach(item => {
     const found = inventory.find(p => p.sku === item.sku)
@@ -26,7 +26,7 @@ async function getSelectedProducts(items) {
   return selected
 }
 
-// Create product data for stripe checkout
+// Create product data for stripe checkout session
 const getLineItems = products => {
   return products.map(product => ({
     name: product.name,
@@ -40,57 +40,36 @@ const getLineItems = products => {
 
 // Add shipping cost
 const addShipping = products => {
-  // Configure shipping prices for the first item of each type and additional items of that type (printful's shipping is weired)
-  const tshirtFirst = 400
-  const tshirtAdditional = 150
-  const bagFirst = 400
-  const bagAdditional = 150
-  const laptopFirst = 600
-  const laptopAdditional = 200
-  const mugFirst = 600
-  const mugAdditional = 360
+  // Shipping prices
+  const shirtOrBag = 250
+  const laptopOrMug = 500
 
-  // Get the quantity of items from each category
-  const tshirtQuantity = products
-    .filter(item => item.category === "T-shirts")
-    .reduce((prev, current) => prev + current.quantity, 0)
-  const bagQuantity = products
-    .filter(item => item.category === "Bags")
-    .reduce((prev, current) => prev + current.quantity, 0)
-  const laptopCoverQuantity = products
-    .filter(item => item.category === "Laptop Covers")
-    .reduce((prev, current) => prev + current.quantity, 0)
-  const mugQuantity = products
-    .filter(item => item.category === "Coffee Mugs")
-    .reduce((prev, current) => prev + current.quantity, 0)
+  // Filter, reduce items and calculate price
+  const getPrice = (category, price) => {
+    return (
+      products
+        .filter(item => item.category === category)
+        .reduce((prev, current) => prev + current.quantity, 0) * price
+    )
+  }
 
-  // Calculate shipping costs for each category and add them up
-  const tshirtCost =
-    tshirtQuantity > 0
-      ? tshirtFirst + (tshirtQuantity - 1) * tshirtAdditional
-      : 0
+  const total =
+    getPrice("T-shirts", shirtOrBag) +
+    getPrice("Bags", shirtOrBag) +
+    getPrice("Laptop Covers", laptopOrMug) +
+    getPrice("Coffee Mugs", laptopOrMug)
 
-  const bagCost =
-    bagQuantity > 0 ? bagFirst + (bagQuantity - 1) * bagAdditional : 0
-
-  const laptopCost =
-    laptopCoverQuantity > 0
-      ? laptopFirst + (laptopCoverQuantity - 1) * laptopAdditional
-      : 0
-
-  const mugCost =
-    mugQuantity > 0 ? mugFirst + (mugQuantity - 1) * mugAdditional : 0
-
-  const total = tshirtCost + bagCost + laptopCost + mugCost
-
-  products.push({
-    name: "Shipping",
-    price: total,
-    quantity: 1,
-  })
-  return products
+  return [
+    ...products,
+    {
+      name: "Shipping",
+      price: total,
+      quantity: 1,
+    },
+  ]
 }
 
+// Create stripe session
 exports.handler = async event => {
   const { items } = JSON.parse(event.body)
   const products = await getSelectedProducts(items)
