@@ -45,24 +45,28 @@ const addShipping = products => {
   const laptopOrMug = 500
 
   // Filter, reduce items and calculate price
-  const getPrice = (category, categoryTwo, price) => {
+  const getPrice = (category, price) => {
     return (
       products
-        .filter(item => item.category === (category | categoryTwo))
+        .filter(item => item.category === category)
         .reduce((prev, current) => prev + current.quantity, 0) * price
     )
   }
 
   const total =
-    getPrice("T-shirts", "Bags", shirtOrBag) +
-    getPrice("Laptop Covers", "Coffee Mugs", laptopOrMug)
+    getPrice("T-shirts", shirtOrBag) +
+    getPrice("Bags", shirtOrBag) +
+    getPrice("Laptop Covers", laptopOrMug) +
+    getPrice("Coffee Mugs", laptopOrMug)
 
-  products.push({
-    name: "Shipping",
-    price: total,
-    quantity: 1,
-  })
-  return products
+  return [
+    ...products,
+    {
+      name: "Shipping",
+      price: total,
+      quantity: 1,
+    },
+  ]
 }
 
 // Create stripe session
